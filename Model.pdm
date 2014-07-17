@@ -2,7 +2,7 @@ Coupled
     {
     Type = Root
     Name = Model
-    Ports = 0; 0
+    Ports = 0; 2
     Description = 
     Graphic
         {
@@ -18,5 +18,343 @@ Coupled
         }
     System
         {
+        Outport
+            {
+            Name = Outport0
+            CoupledPort = 1
+            Description = 
+            Graphic
+                {
+                Position = -8865 ; -4425
+                Dimension = 480
+                Direction = Right
+                }
+            }
+        Outport
+            {
+            Name = Outport1
+            CoupledPort = 2
+            Description = 
+            Graphic
+                {
+                Position = -240 ; -2400
+                Dimension = 480
+                Direction = Right
+                }
+            }
+        Atomic
+            {
+            Name = Street1
+            Ports = 2 ; 1
+            Path = 
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -11805 ; -2730
+                Dimension = 675 ; 675
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                }
+            }
+        Atomic
+            {
+            Name = Semaphore1
+            Ports = 0 ; 1
+            Path = 
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -13380 ; -3330
+                Dimension = 675 ; 675
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                }
+            }
+        Atomic
+            {
+            Name = Generator1
+            Ports = 0 ; 1
+            Path = 
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -13380 ; -2130
+                Dimension = 675 ; 675
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                }
+            }
+        Atomic
+            {
+            Name = Street2
+            Ports = 2 ; 1
+            Path = 
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -7155 ; -2580
+                Dimension = 675 ; 675
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                }
+            }
+        Atomic
+            {
+            Name = Street3
+            Ports = 2 ; 1
+            Path = 
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -1680 ; -405
+                Dimension = 675 ; 675
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                }
+            }
+        Atomic
+            {
+            Name = Street4
+            Ports = 2 ; 1
+            Path = 
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -3930 ; -4305
+                Dimension = 675 ; 675
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                }
+            }
+        Atomic
+            {
+            Name = Generator2
+            Ports = 0 ; 1
+            Path = 
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -5505 ; -3705
+                Dimension = 675 ; 675
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                }
+            }
+        Atomic
+            {
+            Name = Semaphore2
+            Ports = 0 ; 1
+            Path = 
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -8280 ; -3555
+                Dimension = 675 ; 675
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                }
+            }
+        Atomic
+            {
+            Name = Semaphore3
+            Ports = 0 ; 1
+            Path = 
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -4380 ; -1080
+                Dimension = 675 ; 675
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                }
+            }
+        Atomic
+            {
+            Name = Semaphore4
+            Ports = 0 ; 1
+            Path = 
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -5505 ; -4905
+                Dimension = 675 ; 675
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                }
+            }
+        Atomic
+            {
+            Name = Corner1
+            Ports = 2 ; 2
+            Path = 
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -9855 ; -2580
+                Dimension = 675 ; 675
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                }
+            }
+        Atomic
+            {
+            Name = Corner2
+            Ports = 2 ; 2
+            Path = 
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -2955 ; -2580
+                Dimension = 675 ; 675
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                }
+            }
+        Line
+            {
+            Source = Cmp ;  2 ;  1 ; 0
+            Sink = Cmp ;  1 ;  1 ; -1
+            PointX = -12600 ; -11940 ; -11940
+            PointY = -3000 ; -3000 ; -2550
+            }
+        Line
+            {
+            Source = Cmp ;  3 ;  1 ; 0
+            Sink = Cmp ;  1 ;  2 ; -1
+            PointX = -12600 ; -11940 ; -11940
+            PointY = -1800 ; -1800 ; -2250
+            }
+        Line
+            {
+            Source = Cmp ;  1 ;  1 ; 0
+            Sink = Cmp ;  11 ;  1 ; -1
+            PointX = -11025 ; -11025 ; -9990
+            PointY = -2400 ; -2400 ; -2400
+            }
+        Line
+            {
+            Source = Cmp ;  9 ;  1 ; 0
+            Sink = Cmp ;  5 ;  1 ; -1
+            PointX = -3600 ; -1815 ; -1815
+            PointY = -750 ; -750 ; -225
+            }
+        Line
+            {
+            Source = Cmp ;  11 ;  2 ; 0
+            Sink = Cmp ;  4 ;  2 ; -1
+            PointX = -9075 ; -9075 ; -7290
+            PointY = -2100 ; -2100 ; -2100
+            }
+        Line
+            {
+            Source = Cmp ;  11 ;  1 ; 0
+            Sink = Prt ;  1 ;  1 ; -1
+            PointX = -9075 ; -9015 ; -9015
+            PointY = -2400 ; -2400 ; -4425
+            }
+        Line
+            {
+            Source = Cmp ;  8 ;  1 ; 0
+            Sink = Cmp ;  4 ;  1 ; -1
+            PointX = -7500 ; -7290 ; -7290
+            PointY = -3225 ; -3225 ; -2400
+            }
+        Line
+            {
+            Source = Cmp ;  10 ;  1 ; 0
+            Sink = Cmp ;  6 ;  1 ; -1
+            PointX = -4725 ; -4065 ; -4065
+            PointY = -4575 ; -4575 ; -4125
+            }
+        Line
+            {
+            Source = Cmp ;  7 ;  1 ; 0
+            Sink = Cmp ;  6 ;  2 ; -1
+            PointX = -4725 ; -4065 ; -4065
+            PointY = -3375 ; -3375 ; -3825
+            }
+        Line
+            {
+            Source = Cmp ;  4 ;  1 ; 0
+            Sink = Cmp ;  12 ;  2 ; -1
+            PointX = -6375 ; -3090 ; -3090
+            PointY = -2250 ; -2250 ; -2100
+            }
+        Line
+            {
+            Source = Cmp ;  6 ;  1 ; 0
+            Sink = Cmp ;  12 ;  1 ; -1
+            PointX = -3150 ; -3090 ; -3090
+            PointY = -3975 ; -3975 ; -2400
+            }
+        Line
+            {
+            Source = Cmp ;  12 ;  2 ; 0
+            Sink = Cmp ;  5 ;  2 ; -1
+            PointX = -2175 ; -1815 ; -1815
+            PointY = -2100 ; -2100 ; 75
+            }
+        Line
+            {
+            Source = Cmp ;  12 ;  1 ; 0
+            Sink = Prt ;  2 ;  1 ; -1
+            PointX = -2175 ; -2175 ; -390
+            PointY = -2400 ; -2400 ; -2400
+            }
+        Line
+            {
+            Source = Cmp ;  5 ;  1 ; 0
+            Sink = Cmp ;  11 ;  2 ; -1
+            PointX = -900 ; -9990 ; -9990
+            PointY = -75 ; -75 ; -2100
+            }
         }
     }
