@@ -71,11 +71,14 @@ Coupled
                 Position = -13380 ; -3330
                 Dimension = 675 ; 675
                 Direction = Right
-                Color = 15
+                Color = 11
                 Icon = None
                 }
             Parameters
                 {
+                time_red = Val; 9.00464e-294 ; Time in which the semaphore remain red.
+                time_green = Val; 0 ; time in which the semaphore remain green.
+                time_yellow = Val; 2.69194e-294 ; time in which the semaphore remain yellow.
                 }
             }
         Atomic
@@ -122,7 +125,7 @@ Coupled
             Description = Atomic DEVS model
             Graphic
                 {
-                Position = -1680 ; -405
+                Position = -1680 ; -480
                 Dimension = 675 ; 675
                 Direction = Right
                 Color = 15
@@ -159,60 +162,6 @@ Coupled
             Graphic
                 {
                 Position = -5505 ; -3705
-                Dimension = 675 ; 675
-                Direction = Right
-                Color = 15
-                Icon = None
-                }
-            Parameters
-                {
-                }
-            }
-        Atomic
-            {
-            Name = Semaphore2
-            Ports = 0 ; 1
-            Path = 
-            Description = Atomic DEVS model
-            Graphic
-                {
-                Position = -8280 ; -3555
-                Dimension = 675 ; 675
-                Direction = Right
-                Color = 15
-                Icon = None
-                }
-            Parameters
-                {
-                }
-            }
-        Atomic
-            {
-            Name = Semaphore3
-            Ports = 0 ; 1
-            Path = 
-            Description = Atomic DEVS model
-            Graphic
-                {
-                Position = -4380 ; -1080
-                Dimension = 675 ; 675
-                Direction = Right
-                Color = 15
-                Icon = None
-                }
-            Parameters
-                {
-                }
-            }
-        Atomic
-            {
-            Name = Semaphore4
-            Ports = 0 ; 1
-            Path = 
-            Description = Atomic DEVS model
-            Graphic
-                {
-                Position = -5505 ; -4905
                 Dimension = 675 ; 675
                 Direction = Right
                 Color = 15
@@ -308,6 +257,69 @@ Coupled
                 Format5 = Str;  ; Formatting options for input 5
                 }
             }
+        Atomic
+            {
+            Name = Semaphore2
+            Ports = 0 ; 1
+            Path = 
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -8430 ; -3480
+                Dimension = 675 ; 675
+                Direction = Right
+                Color = 11
+                Icon = None
+                }
+            Parameters
+                {
+                time_red = Val; 9.00464e-294 ; Time in which the semaphore remain red.
+                time_green = Val; 0 ; time in which the semaphore remain green.
+                time_yellow = Val; 2.69194e-294 ; time in which the semaphore remain yellow.
+                }
+            }
+        Atomic
+            {
+            Name = Semaphore3
+            Ports = 0 ; 1
+            Path = 
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -3705 ; -1305
+                Dimension = 675 ; 675
+                Direction = Right
+                Color = 11
+                Icon = None
+                }
+            Parameters
+                {
+                time_red = Val; 9.00464e-294 ; Time in which the semaphore remain red.
+                time_green = Val; 0 ; time in which the semaphore remain green.
+                time_yellow = Val; 2.69194e-294 ; time in which the semaphore remain yellow.
+                }
+            }
+        Atomic
+            {
+            Name = Semaphore4
+            Ports = 0 ; 1
+            Path = 
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -5505 ; -4830
+                Dimension = 675 ; 675
+                Direction = Right
+                Color = 11
+                Icon = None
+                }
+            Parameters
+                {
+                time_red = Val; 9.00464e-294 ; Time in which the semaphore remain red.
+                time_green = Val; 0 ; time in which the semaphore remain green.
+                time_yellow = Val; 2.69194e-294 ; time in which the semaphore remain yellow.
+                }
+            }
         Line
             {
             Source = Cmp ;  2 ;  1 ; 0
@@ -325,44 +337,23 @@ Coupled
         Line
             {
             Source = Cmp ;  1 ;  1 ; 0
-            Sink = Cmp ;  11 ;  1 ; -1
+            Sink = Cmp ;  8 ;  1 ; -1
             PointX = -11025 ; -11025 ; -9990
             PointY = -2400 ; -2400 ; -2400
             }
         Line
             {
-            Source = Cmp ;  9 ;  1 ; 0
-            Sink = Cmp ;  5 ;  1 ; -1
-            PointX = -3600 ; -1815 ; -1815
-            PointY = -750 ; -750 ; -225
-            }
-        Line
-            {
-            Source = Cmp ;  11 ;  2 ; 0
+            Source = Cmp ;  8 ;  2 ; 0
             Sink = Cmp ;  4 ;  2 ; -1
             PointX = -9075 ; -9075 ; -7290
             PointY = -2100 ; -2100 ; -2100
             }
         Line
             {
-            Source = Cmp ;  11 ;  1 ; 0
+            Source = Cmp ;  8 ;  1 ; 0
             Sink = Prt ;  1 ;  1 ; -1
             PointX = -9075 ; -9015 ; -9015
             PointY = -2400 ; -2400 ; -4425
-            }
-        Line
-            {
-            Source = Cmp ;  8 ;  1 ; 0
-            Sink = Cmp ;  4 ;  1 ; -1
-            PointX = -7500 ; -7290 ; -7290
-            PointY = -3225 ; -3225 ; -2400
-            }
-        Line
-            {
-            Source = Cmp ;  10 ;  1 ; 0
-            Sink = Cmp ;  6 ;  1 ; -1
-            PointX = -4725 ; -4065 ; -4065
-            PointY = -4575 ; -4575 ; -4125
             }
         Line
             {
@@ -374,51 +365,72 @@ Coupled
         Line
             {
             Source = Cmp ;  4 ;  1 ; 0
-            Sink = Cmp ;  12 ;  2 ; -1
+            Sink = Cmp ;  9 ;  2 ; -1
             PointX = -6375 ; -3090 ; -3090
             PointY = -2400 ; -2400 ; -2100
             }
         Line
             {
             Source = Cmp ;  6 ;  1 ; 0
-            Sink = Cmp ;  12 ;  1 ; -1
+            Sink = Cmp ;  9 ;  1 ; -1
             PointX = -3150 ; -3090 ; -3090
             PointY = -3975 ; -3975 ; -2400
             }
         Line
             {
-            Source = Cmp ;  12 ;  2 ; 0
-            Sink = Cmp ;  5 ;  2 ; -1
-            PointX = -2175 ; -1815 ; -1815
-            PointY = -2100 ; -2100 ; 75
-            }
-        Line
-            {
-            Source = Cmp ;  12 ;  1 ; 0
+            Source = Cmp ;  9 ;  1 ; 0
             Sink = Prt ;  2 ;  1 ; -1
             PointX = -2175 ; -2175 ; -390
             PointY = -2400 ; -2400 ; -2400
             }
         Line
             {
-            Source = Cmp ;  5 ;  1 ; 0
-            Sink = Cmp ;  11 ;  2 ; -1
-            PointX = -900 ; -9990 ; -9990
-            PointY = -225 ; -225 ; -2100
-            }
-        Line
-            {
             Source = Cmp ;  4 ;  2 ; 0
-            Sink = Cmp ;  13 ;  1 ; -1
+            Sink = Cmp ;  10 ;  1 ; -1
             PointX = -6375 ; -5790 ; -5790
             PointY = -2100 ; -2100 ; -1575
             }
         Line
             {
             Source = Cmp ;  5 ;  2 ; 0
-            Sink = Cmp ;  14 ;  1 ; -1
-            PointX = -900 ; -900 ; -15
-            PointY = 75 ; 75 ; 75
+            Sink = Cmp ;  11 ;  1 ; -1
+            PointX = -900 ; -15 ; -15
+            PointY = 0 ; 0 ; 75
+            }
+        Line
+            {
+            Source = Cmp ;  12 ;  1 ; 0
+            Sink = Cmp ;  4 ;  1 ; -1
+            PointX = -7650 ; -7290 ; -7290
+            PointY = -3150 ; -3150 ; -2400
+            }
+        Line
+            {
+            Source = Cmp ;  13 ;  1 ; 0
+            Sink = Cmp ;  5 ;  1 ; -1
+            PointX = -2925 ; -1815 ; -1815
+            PointY = -975 ; -975 ; -300
+            }
+        Line
+            {
+            Source = Cmp ;  9 ;  2 ; 0
+            Sink = Cmp ;  5 ;  2 ; -1
+            PointX = -2175 ; -1815 ; -1815
+            PointY = -2100 ; -2100 ; 0
+            }
+        Line
+            {
+            Source = Cmp ;  5 ;  1 ; 0
+            Sink = Cmp ;  8 ;  2 ; -1
+            PointX = -900 ; -9990 ; -9990
+            PointY = -300 ; -300 ; -2100
+            }
+        Line
+            {
+            Source = Cmp ;  14 ;  1 ; 0
+            Sink = Cmp ;  6 ;  1 ; -1
+            PointX = -4725 ; -4065 ; -4065
+            PointY = -4500 ; -4500 ; -4125
             }
         }
     }
