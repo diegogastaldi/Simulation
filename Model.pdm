@@ -110,7 +110,7 @@ Coupled
             {
             Name = Generator2
             Ports = 0 ; 1
-            Path = 
+            Path = sources/car_generator.h
             Description = Atomic DEVS model
             Graphic
                 {
@@ -202,7 +202,7 @@ Coupled
             {
             Name = Street3
             Ports = 2 ; 2
-            Path = 
+            Path = sources/street.h
             Description = Atomic DEVS model
             Graphic
                 {
@@ -223,7 +223,7 @@ Coupled
             {
             Name = Street4
             Ports = 2 ; 1
-            Path = 
+            Path = sources/street.h
             Description = Atomic DEVS model
             Graphic
                 {
@@ -267,7 +267,7 @@ Coupled
             {
             Name = Street2
             Ports = 2 ; 2
-            Path = 
+            Path = sources/street.h
             Description = Atomic DEVS model
             Graphic
                 {
@@ -438,7 +438,7 @@ Coupled
             {
             Source = Cmp ;  11 ;  1 ; 0
             Sink = Cmp ;  10 ;  2 ; -1
-            PointX = -6300 ; -2940 ; -2940
+            PointX = -6300 ; -6300 ; -2940
             PointY = -2400 ; -2400 ; -2400
             }
         Line
