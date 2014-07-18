@@ -89,7 +89,7 @@ Coupled
             {
             Name = Generator1
             Ports = 0 ; 1
-            Path = 
+            Path = sources/car_generator.h
             Description = Atomic DEVS model
             Graphic
                 {
