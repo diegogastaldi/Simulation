@@ -14,6 +14,8 @@ class car_generator: public Simulator {
 // and parameters
 double time_between_cars;
 double cars_length;	
+
+
 public:
 	car_generator(const char *n): Simulator(n) {};
 	void init(double, ...);
