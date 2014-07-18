@@ -102,7 +102,8 @@ Coupled
                 }
             Parameters
                 {
-                parameter_distribution = Val; 6.656e-294 ; 
+                cars_length = Val; 2 ; Length of the cars.
+                time_between_cars = Val; 5.09279e-313 ; Time between the arrive of two cars.
                 }
             }
         Atomic
