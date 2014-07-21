@@ -86,9 +86,9 @@ void street::exit() {
 
 }
 
-list <double> street::update(list <double> dist, double time, bool output) {
+std::list <double> street::update(std::list <double> dist, double time, bool output) {
 	/*new_list has "times" updated*/
-	list <double> new_list;
+	std::list <double> new_list;
 	double new_time;
 	for (int i = 0; i<dist.size(); i++) {
 		new_time = dist.front() - time;
@@ -104,7 +104,7 @@ list <double> street::update(list <double> dist, double time, bool output) {
 		}
 	}
 	/*this list has not times equals*/
-	list<double> list_not_enzimed;
+	std::list<double> list_not_enzimed;
 	int first;
 	for (int i = 0; i<new_list.size(); i++) {
 		first = new_list.front();
@@ -115,8 +115,8 @@ list <double> street::update(list <double> dist, double time, bool output) {
 	return list_not_enzimed;
 }
 
-list <double> street::update_tail(list <double> dist, double first) {
-	list<double> list_result;
+std::list <double> street::update_tail(std::list <double> dist, double first) {
+	std::list<double> list_result;
 	bool finished = false;
 	double aux;
 	for(int i = 0; i < dist.size(); (i++ && !finished)) {	

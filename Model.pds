@@ -22,7 +22,7 @@ Root-Coordinator
    }
   Simulator
    {
-    Path = 
+    Path = sources/corner.h
     Parameters = 2.334650e-264,2.345780e-264,4.668390e-313,1.036130e-317,6.654470e-294
    }
   Simulator
@@ -47,7 +47,7 @@ Root-Coordinator
    }
   Simulator
    {
-    Path = 
+    Path = sources/corner.h
     Parameters = 2.334650e-264,2.345780e-264,4.668390e-313,1.036130e-317,6.654470e-294
    }
   Simulator

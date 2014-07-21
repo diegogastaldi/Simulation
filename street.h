@@ -11,15 +11,13 @@
 #include "list"
 #include "limits"
 
-using namespace std;
-
 class street: public Simulator { 
 double size_cars;
 double speed_cars;
 double size_street;
 
 double amount_street;
-list <double> distance;
+std::list <double> distance;
 double Sigma;
 bool output;
 
@@ -41,8 +39,8 @@ public:
 	void dext(Event , double );
 	Event lambda(double);
 	void exit();
-	list <double> update(list <double> dist, double time, bool output);
 private:
-	list <double> update_tail(list <double> dist, double first);
+	std::list <double> update(std::list <double> dist, double time, bool output);
+	std::list <double> update_tail(std::list <double> dist, double first);
 };
 #endif

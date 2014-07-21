@@ -129,7 +129,7 @@ Coupled
             {
             Name = Corner1
             Ports = 2 ; 2
-            Path = 
+            Path = sources/corner.h
             Description = Atomic DEVS model
             Graphic
                 {
@@ -244,7 +244,7 @@ Coupled
             {
             Name = Corner2
             Ports = 2 ; 2
-            Path = 
+            Path = sources/corner.h
             Description = Atomic DEVS model
             Graphic
                 {
