@@ -88,26 +88,6 @@ Coupled
             }
         Atomic
             {
-            Name = Generator1
-            Ports = 0 ; 1
-            Path = sources/car_generator.h
-            Description = Atomic DEVS model
-            Graphic
-                {
-                Position = -13380 ; -2130
-                Dimension = 675 ; 675
-                Direction = Right
-                Color = 1
-                Icon = None
-                }
-            Parameters
-                {
-                cars_length = Val; 2 ; Length of the cars.
-                time_between_cars = Val; 5.09279e-313 ; Time between the arrive of two cars.
-                }
-            }
-        Atomic
-            {
             Name = Generator2
             Ports = 0 ; 1
             Path = sources/car_generator.h
@@ -400,6 +380,25 @@ Coupled
                 Format5 = Str;  ; Formatting options for input 5
                 }
             }
+        Atomic
+            {
+            Name = Generator1
+            Ports = 0 ; 1
+            Path = sources/car_generator.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -13380 ; -2055
+                Dimension = 675 ; 675
+                Direction = Right
+                Color = 1
+                Icon = None
+                }
+            Parameters
+                {
+                parameter_distribution = Val; 4.67602e-313 ; 
+                }
+            }
         Line
             {
             Source = Cmp ;  2 ;  1 ; 0
@@ -409,122 +408,122 @@ Coupled
             }
         Line
             {
-            Source = Cmp ;  3 ;  1 ; 0
-            Sink = Cmp ;  1 ;  2 ; -1
-            PointX = -12600 ; -11940 ; -11940
-            PointY = -1800 ; -1800 ; -2250
-            }
-        Line
-            {
             Source = Cmp ;  1 ;  1 ; 0
-            Sink = Cmp ;  5 ;  1 ; -1
+            Sink = Cmp ;  4 ;  1 ; -1
             PointX = -11025 ; -11025 ; -9990
             PointY = -2400 ; -2400 ; -2400
             }
         Line
             {
-            Source = Cmp ;  5 ;  1 ; 0
+            Source = Cmp ;  4 ;  1 ; 0
             Sink = Prt ;  1 ;  1 ; -1
             PointX = -9075 ; -9015 ; -9015
             PointY = -2400 ; -2400 ; -4425
             }
         Line
             {
-            Source = Cmp ;  8 ;  1 ; 0
-            Sink = Cmp ;  5 ;  2 ; -1
+            Source = Cmp ;  7 ;  1 ; 0
+            Sink = Cmp ;  4 ;  2 ; -1
             PointX = -1650 ; -1650 ; -9990 ; -9990
             PointY = 75 ; -450 ; -450 ; -2100
             }
         Line
             {
-            Source = Cmp ;  4 ;  1 ; 0
-            Sink = Cmp ;  9 ;  2 ; -1
+            Source = Cmp ;  3 ;  1 ; 0
+            Sink = Cmp ;  8 ;  2 ; -1
             PointX = -4725 ; -4725 ; -4215
             PointY = -3375 ; -3375 ; -3375
             }
         Line
             {
-            Source = Cmp ;  9 ;  1 ; 0
-            Sink = Cmp ;  10 ;  1 ; -1
+            Source = Cmp ;  8 ;  1 ; 0
+            Sink = Cmp ;  9 ;  1 ; -1
             PointX = -3300 ; -3300 ; -1890 ; -1890
             PointY = -3525 ; -3825 ; -3825 ; -2700
             }
         Line
             {
-            Source = Cmp ;  10 ;  1 ; 0
+            Source = Cmp ;  9 ;  1 ; 0
             Sink = Prt ;  2 ;  1 ; -1
             PointX = -975 ; -975 ; -465
             PointY = -2700 ; -2700 ; -2700
             }
         Line
             {
-            Source = Cmp ;  10 ;  2 ; 0
-            Sink = Cmp ;  8 ;  2 ; -1
+            Source = Cmp ;  9 ;  2 ; 0
+            Sink = Cmp ;  7 ;  2 ; -1
             PointX = -975 ; -525 ; -525 ; -735
             PointY = -2400 ; -2400 ; 225 ; 225
             }
         Line
             {
-            Source = Cmp ;  5 ;  2 ; 0
-            Sink = Cmp ;  11 ;  2 ; -1
+            Source = Cmp ;  4 ;  2 ; 0
+            Sink = Cmp ;  10 ;  2 ; -1
             PointX = -9075 ; -9075 ; -7215
             PointY = -2100 ; -2100 ; -2100
             }
         Line
             {
-            Source = Cmp ;  11 ;  1 ; 0
-            Sink = Cmp ;  10 ;  2 ; -1
+            Source = Cmp ;  10 ;  1 ; 0
+            Sink = Cmp ;  9 ;  2 ; -1
             PointX = -6300 ; -1890 ; -1890
             PointY = -2250 ; -2250 ; -2400
             }
         Line
             {
-            Source = Cmp ;  12 ;  1 ; 0
-            Sink = Cmp ;  11 ;  1 ; -1
+            Source = Cmp ;  11 ;  1 ; 0
+            Sink = Cmp ;  10 ;  1 ; -1
             PointX = -7725 ; -7275 ; -7275 ; -7215
             PointY = -3150 ; -3150 ; -2400 ; -2400
             }
         Line
             {
-            Source = Cmp ;  13 ;  1 ; 0
-            Sink = Cmp ;  8 ;  1 ; -1
+            Source = Cmp ;  12 ;  1 ; 0
+            Sink = Cmp ;  7 ;  1 ; -1
             PointX = 75 ; 75 ; -735
             PointY = -75 ; -75 ; -75
             }
         Line
             {
-            Source = Cmp ;  14 ;  1 ; 0
-            Sink = Cmp ;  9 ;  1 ; -1
+            Source = Cmp ;  13 ;  1 ; 0
+            Sink = Cmp ;  8 ;  1 ; -1
             PointX = -4725 ; -4350 ; -4350 ; -4215
             PointY = -4575 ; -4575 ; -3675 ; -3675
             }
         Line
             {
             Source = Cmp ;  1 ;  1 ; 0
-            Sink = Cmp ;  15 ;  1 ; -1
+            Sink = Cmp ;  14 ;  1 ; -1
             PointX = -11025 ; -10965 ; -10965
             PointY = -2400 ; -2400 ; -975
             }
         Line
             {
-            Source = Cmp ;  11 ;  1 ; 0
-            Sink = Cmp ;  6 ;  1 ; -1
+            Source = Cmp ;  10 ;  1 ; 0
+            Sink = Cmp ;  5 ;  1 ; -1
             PointX = -6300 ; -6300 ; -6300 ; -5640
             PointY = -2250 ; -2250 ; -1275 ; -1275
             }
         Line
             {
-            Source = Cmp ;  9 ;  1 ; 0
-            Sink = Cmp ;  16 ;  1 ; -1
+            Source = Cmp ;  8 ;  1 ; 0
+            Sink = Cmp ;  15 ;  1 ; -1
             PointX = -3300 ; -3300 ; -3300 ; -2865
             PointY = -3525 ; -3525 ; -3150 ; -3150
             }
         Line
             {
-            Source = Cmp ;  8 ;  1 ; 0
-            Sink = Cmp ;  7 ;  1 ; -1
+            Source = Cmp ;  7 ;  1 ; 0
+            Sink = Cmp ;  6 ;  1 ; -1
             PointX = -1650 ; -1650 ; -4785
             PointY = 75 ; 525 ; 525
+            }
+        Line
+            {
+            Source = Cmp ;  16 ;  1 ; 0
+            Sink = Cmp ;  1 ;  2 ; -1
+            PointX = -12600 ; -11940 ; -11940
+            PointY = -1725 ; -1725 ; -2250
             }
         }
     }

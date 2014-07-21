@@ -13,7 +13,8 @@ class car_generator: public Simulator {
 // output variables
 // and parameters
 double time_between_cars;
-double cars_length;	
+double sigma;
+
 
 
 public:
