@@ -42,5 +42,7 @@ public:
 	Event lambda(double);
 	void exit();
 	list <double> update(list <double> dist, double time, bool output);
+private:
+	list <double> update_tail(list <double> dist, double first);
 };
 #endif
