@@ -6,10 +6,16 @@ void street::init(double t,...) {
 	size_cars = va_arg( parameters, double);
 	speed_cars = va_arg( parameters, double);
 	size_street = va_arg( parameters, double);
-	output = va_arg( parameters, double);
 
-	Sigma=0;
+	/*zero -> false
+	otherwise -> true*/
+
+	output = (bool) va_arg( parameters, double);
+
+	Sigma = std::numeric_limits<double>::max();
 	amount_street = 0;
+
+	i = 1;
 }
 double street::ta(double t) {
 	return Sigma;
@@ -79,7 +85,6 @@ void street::dext(Event x, double t) {
 }
 
 Event street::lambda(double t) {
-	double i = 1;
 	return Event(&i,0);
 }
 void street::exit() {

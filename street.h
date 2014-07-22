@@ -21,7 +21,7 @@ std::list <double> distance;
 double Sigma;
 bool output;
 
-
+double i;
 
 
 

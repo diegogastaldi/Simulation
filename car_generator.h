@@ -12,8 +12,23 @@ class car_generator: public Simulator {
 // Declare the state,
 // output variables
 // and parameters
-double time_between_cars;
+double parameter_distribution;
 double sigma;
+
+double i;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
