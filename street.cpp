@@ -16,15 +16,12 @@ void street::init(double t,...) {
 	amount_street = 0;
 
 	i = 1;
-printLog("Inicializacion is complete \n");
 }
 double street::ta(double t) {
-printLog("ta is initialized \n");
 	return Sigma;
 }
 
 void street::dint(double t) {
-printLog("dint is initialized \n");
 	if (output && (amount_street >= 2)) {
 		amount_street--;
 		distance.pop_back();
@@ -42,37 +39,31 @@ printLog("dint is initialized \n");
 			} else {
 				if (amount_street < 0) {	
 					/*ERROR*/;
-printLog("dint error \n");
+					printLog("Error: in method dint at street.cpp {a car must leave, but there is not a car on the street}\n");
+					std::exit(EXIT_FAILURE);
 				}
 			}
 		}
 	}
-printLog("dint is complete \n");
 }
 
 void street::dext(Event x, double t) {
-printLog("dext is initialized %f \n", t);
 	double *value;
-	value = (double*)x.value;
-printLog("dext is initialized %f \n", t);
-printLog("dext: port %i \n", x.port);
-printLog("dext: value %f \n", *value);
+	value = (double*) x.value;
 
 	if (x.port == 0) {
-		if ((value[0] == 2) && (amount_street > 0))  {
-			distance = update(distance, e, output);
-			Sigma = Sigma - e;
+		if (amount_street == 0) {
+			output = (value[0] == 2);
 		} else {
-			if (amount_street == 0) {
-				Sigma = std::numeric_limits<double>::max();
-				output = value[0] == 2;
+			if (value[0] == 2)  {
+				distance = update(distance, e, output);
+				output = true;
+				Sigma = Sigma - e;
 			} else {
-				if ((value[0] != 2) && (amount_street > 0)) {
+				if (value[0] != 2) {
 					distance = update(distance, e, output);
-					Sigma = std::numeric_limits<double>::max();
 					output = false;
-				} else {
-					/*ERROR*/
+					Sigma = std::numeric_limits<double>::max();
 				}
 			}
 		}
@@ -82,7 +73,8 @@ printLog("dext: value %f \n", *value);
 				amount_street = 1;
 				distance.clear();
 				distance.push_front(size_street);
-				Sigma = (size_street/speed_cars);
+				if (output)
+					Sigma = (size_street/speed_cars);
 			} else {
 				if ((amount_street >= 1) && (((amount_street + 1) * size_cars) <= size_street) && ((size_street - (update(distance, e, output)).front()) >= size_cars)) {
 					amount_street++;
@@ -92,29 +84,24 @@ printLog("dext: value %f \n", *value);
 				} else {
 					if ((amount_street + 1) * size_cars > size_street) {
 						/*Error*/;
-printLog("dext street error \n");
+						printLog("Error: in method dext at street.cpp {a car must leave, but there is not place on the street}\n");
+						std::exit(EXIT_FAILURE);
 					} else {
 						if (((amount_street + 1) * size_cars <= size_street) && (amount_street > 0) && (size_street - (update(distance, e, output)).front() < size_cars)) {
 							distance = update(distance, e, output);
 							Sigma = Sigma - e;
-						} else {
-							/*Error*/
+							printLog("Warning: {a car was ignored because there is not place}\n");
 						}
 					}
 				}
 			}
-		} else {
-			/*port error*/
-printLog("dext street port error \n");
 		}
 	}
-printLog("dext is complete \n");
 }
 
 Event street::lambda(double t) {
-printLog("lambda is initialized \n");
 	return Event(&i,0);
 }
 void street::exit() {
-printLog("exit: %f \n", amount_street);
+printLog("exit: ont the street there is %f cars.\n", amount_street);
 }

@@ -55,6 +55,8 @@ private:
 					new_list.push_front(0);
 				else {
 					/*ERROR*/
+					printLog("Error: in method update at street.h {a car must leave the street, but was not called the function dint}\n");
+					std::exit(EXIT_FAILURE);
 				}
 			}
 			dist.pop_back();

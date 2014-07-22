@@ -30,7 +30,7 @@ if (color == 2) {
 } else if (color == 0) {
 	Sigma = t_red;
 	color = 2;
-} else if (color == 0) {
+} else if (color == 1) {
 	Sigma = t_yellow;
 	color = 0;
 }
