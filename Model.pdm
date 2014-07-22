@@ -37,7 +37,7 @@ Coupled
             Description = 
             Graphic
                 {
-                Position = -315 ; -2700
+                Position = -315 ; -2250
                 Dimension = 480
                 Direction = Right
                 }
@@ -58,10 +58,10 @@ Coupled
                 }
             Parameters
                 {
-                size_cars = Val; 4.66839e-313 ; size of the cars
-                speed_cars = Val; 5.11757e-294 ; speed of the cars
-                size_street = Val; 0 ; size of the corner
-                initial_output = Val; 1.04848e-317 ; indicates that cars can get off the street.
+                size_cars = Val; 2 ; size of the cars
+                speed_cars = Val; 30000 ; speed of the cars
+                size_street = Val; 100 ; size of the corner
+                initial_output = Val; 0 ; indicates that cars can get off the street.
                 }
             }
         Atomic
@@ -102,7 +102,7 @@ Coupled
                 }
             Parameters
                 {
-                parameter_distribution = Val; 4.67602e-313 ; 
+                parameter_distribution = Val; 10 ; 
                 }
             }
         Atomic
@@ -121,11 +121,10 @@ Coupled
                 }
             Parameters
                 {
-                size_cars = Val; 2.33465e-264 ; 
-                speed_cars = Val; 2.34578e-264 ; 
-                size_corner = Val; 4.66839e-313 ; 
-                out_percent0 = Val; 1.03613e-317 ; 
-                out_percent1 = Val; 6.65447e-294 ; 
+                size_cars = Val; 2 ; 
+                speed_cars = Val; 10 ; 
+                size_corner = Val; 10 ; 
+                out_percent0 = Val; 40 ; 
                 }
             }
         Atomic
@@ -180,71 +179,6 @@ Coupled
             }
         Atomic
             {
-            Name = Street3
-            Ports = 2 ; 1
-            Path = sources/street.h
-            Description = Atomic DEVS model
-            Graphic
-                {
-                Position = -1530 ; -255
-                Dimension = 675 ; 675
-                Direction = Left
-                Color = 10
-                Icon = None
-                }
-            Parameters
-                {
-                size_cars = Val; 4.66839e-313 ; size of the cars
-                speed_cars = Val; 5.11757e-294 ; speed of the cars
-                size_street = Val; 4.66839e-313 ; size of the corner
-                }
-            }
-        Atomic
-            {
-            Name = Street4
-            Ports = 2 ; 1
-            Path = sources/street.h
-            Description = Atomic DEVS model
-            Graphic
-                {
-                Position = -4080 ; -3855
-                Dimension = 675 ; 675
-                Direction = Right
-                Color = 10
-                Icon = None
-                }
-            Parameters
-                {
-                size_cars = Val; 4.66839e-313 ; size of the cars
-                speed_cars = Val; 5.11757e-294 ; speed of the cars
-                size_street = Val; 4.66839e-313 ; size of the corner
-                }
-            }
-        Atomic
-            {
-            Name = Corner2
-            Ports = 2 ; 2
-            Path = sources/corner.h
-            Description = Atomic DEVS model
-            Graphic
-                {
-                Position = -1755 ; -2880
-                Dimension = 675 ; 675
-                Direction = Right
-                Color = 13
-                Icon = None
-                }
-            Parameters
-                {
-                size_cars = Val; 2.33465e-264 ; 
-                speed_cars = Val; 2.34578e-264 ; 
-                size_corner = Val; 4.66839e-313 ; 
-                out_percent0 = Val; 1.03613e-317 ; 
-                out_percent1 = Val; 6.65447e-294 ; 
-                }
-            }
-        Atomic
-            {
             Name = Street2
             Ports = 2 ; 1
             Path = sources/street.h
@@ -259,9 +193,10 @@ Coupled
                 }
             Parameters
                 {
-                size_cars = Val; 4.66839e-313 ; size of the cars
-                speed_cars = Val; 5.11757e-294 ; speed of the cars
-                size_street = Val; 4.66839e-313 ; size of the corner
+                size_cars = Val; 2 ; size of the cars
+                speed_cars = Val; 30000 ; speed of the cars
+                size_street = Val; 80 ; size of the corner
+                initial_output = Val; 1 ; 
                 }
             }
         Atomic
@@ -302,9 +237,9 @@ Coupled
                 }
             Parameters
                 {
-                time_red = Val; 9.00464e-294 ; Time in which the semaphore remain red.
-                time_green = Val; 0 ; time in which the semaphore remain green.
-                time_yellow = Val; 2.69194e-294 ; time in which the semaphore remain yellow.
+                time_red = Val; 20 ; Time in which the semaphore remain red.
+                time_green = Val; 17 ; time in which the semaphore remain green.
+                time_yellow = Val; 3 ; time in which the semaphore remain yellow.
                 initial_color = Val; 2 ; initial color of the semaphore
                 }
             }
@@ -363,7 +298,7 @@ Coupled
             Description = Plot input signal using GnuPlot
             Graphic
                 {
-                Position = -2730 ; -3510
+                Position = -2730 ; -4335
                 Dimension = 675 ; 720
                 Direction = Right
                 Color = 15
@@ -396,7 +331,73 @@ Coupled
                 }
             Parameters
                 {
-                parameter_distribution = Val; 4.67602e-313 ; 
+                parameter_distribution = Val; 10 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Street4
+            Ports = 2 ; 1
+            Path = sources/street.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -4005 ; -4305
+                Dimension = 675 ; 675
+                Direction = Right
+                Color = 10
+                Icon = None
+                }
+            Parameters
+                {
+                size_cars = Val; 2 ; size of the cars
+                speed_cars = Val; 30000 ; speed of the cars
+                size_street = Val; 100 ; size of the corner
+                initial_output = Val; 0 ; indicates that cars can get off the street.
+                }
+            }
+        Atomic
+            {
+            Name = Street3
+            Ports = 2 ; 1
+            Path = sources/street.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -2205 ; -255
+                Dimension = 675 ; 675
+                Direction = Left
+                Color = 10
+                Icon = None
+                }
+            Parameters
+                {
+                size_cars = Val; 2 ; size of the cars
+                speed_cars = Val; 65000 ; speed of the cars
+                size_street = Val; 100 ; size of the corner
+                initial_output = Val; 2 ; indicates that cars can get off the street.
+                }
+            }
+        Atomic
+            {
+            Name = Corner2
+            Ports = 2 ; 2
+            Path = sources/corner.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -2655 ; -2430
+                Dimension = 675 ; 675
+                Direction = Right
+                Color = 13
+                Icon = None
+                }
+            Parameters
+                {
+                size_cars = Val; 2 ; 
+                speed_cars = Val; 10 ; 
+                size_corner = Val; 10 ; 
+                out_percent0 = Val; 50 ; 
                 }
             }
         Line
@@ -422,108 +423,108 @@ Coupled
             }
         Line
             {
-            Source = Cmp ;  7 ;  1 ; 0
-            Sink = Cmp ;  4 ;  2 ; -1
-            PointX = -1650 ; -1650 ; -9990 ; -9990
-            PointY = 75 ; -450 ; -450 ; -2100
-            }
-        Line
-            {
-            Source = Cmp ;  3 ;  1 ; 0
-            Sink = Cmp ;  8 ;  2 ; -1
-            PointX = -4725 ; -4725 ; -4215
-            PointY = -3375 ; -3375 ; -3375
-            }
-        Line
-            {
-            Source = Cmp ;  8 ;  1 ; 0
-            Sink = Cmp ;  9 ;  1 ; -1
-            PointX = -3300 ; -3300 ; -1890 ; -1890
-            PointY = -3525 ; -3825 ; -3825 ; -2700
-            }
-        Line
-            {
-            Source = Cmp ;  9 ;  1 ; 0
-            Sink = Prt ;  2 ;  1 ; -1
-            PointX = -975 ; -975 ; -465
-            PointY = -2700 ; -2700 ; -2700
-            }
-        Line
-            {
-            Source = Cmp ;  9 ;  2 ; 0
-            Sink = Cmp ;  7 ;  2 ; -1
-            PointX = -975 ; -525 ; -525 ; -735
-            PointY = -2400 ; -2400 ; 225 ; 225
-            }
-        Line
-            {
             Source = Cmp ;  4 ;  2 ; 0
-            Sink = Cmp ;  10 ;  2 ; -1
+            Sink = Cmp ;  7 ;  2 ; -1
             PointX = -9075 ; -9075 ; -7215
             PointY = -2100 ; -2100 ; -2100
             }
         Line
             {
-            Source = Cmp ;  10 ;  1 ; 0
-            Sink = Cmp ;  9 ;  2 ; -1
-            PointX = -6300 ; -1890 ; -1890
-            PointY = -2250 ; -2250 ; -2400
-            }
-        Line
-            {
-            Source = Cmp ;  11 ;  1 ; 0
-            Sink = Cmp ;  10 ;  1 ; -1
+            Source = Cmp ;  8 ;  1 ; 0
+            Sink = Cmp ;  7 ;  1 ; -1
             PointX = -7725 ; -7275 ; -7275 ; -7215
             PointY = -3150 ; -3150 ; -2400 ; -2400
             }
         Line
             {
-            Source = Cmp ;  12 ;  1 ; 0
-            Sink = Cmp ;  7 ;  1 ; -1
-            PointX = 75 ; 75 ; -735
-            PointY = -75 ; -75 ; -75
-            }
-        Line
-            {
-            Source = Cmp ;  13 ;  1 ; 0
-            Sink = Cmp ;  8 ;  1 ; -1
-            PointX = -4725 ; -4350 ; -4350 ; -4215
-            PointY = -4575 ; -4575 ; -3675 ; -3675
-            }
-        Line
-            {
             Source = Cmp ;  1 ;  1 ; 0
-            Sink = Cmp ;  14 ;  1 ; -1
+            Sink = Cmp ;  11 ;  1 ; -1
             PointX = -11025 ; -10965 ; -10965
             PointY = -2400 ; -2400 ; -975
             }
         Line
             {
-            Source = Cmp ;  10 ;  1 ; 0
+            Source = Cmp ;  7 ;  1 ; 0
             Sink = Cmp ;  5 ;  1 ; -1
             PointX = -6300 ; -6300 ; -6300 ; -5640
             PointY = -2250 ; -2250 ; -1275 ; -1275
             }
         Line
             {
-            Source = Cmp ;  8 ;  1 ; 0
-            Sink = Cmp ;  15 ;  1 ; -1
-            PointX = -3300 ; -3300 ; -3300 ; -2865
-            PointY = -3525 ; -3525 ; -3150 ; -3150
+            Source = Cmp ;  13 ;  1 ; 0
+            Sink = Cmp ;  1 ;  2 ; -1
+            PointX = -12600 ; -11940 ; -11940
+            PointY = -1725 ; -1725 ; -2250
             }
         Line
             {
-            Source = Cmp ;  7 ;  1 ; 0
+            Source = Cmp ;  3 ;  1 ; 0
+            Sink = Cmp ;  14 ;  2 ; -1
+            PointX = -4725 ; -4140 ; -4140
+            PointY = -3375 ; -3375 ; -3825
+            }
+        Line
+            {
+            Source = Cmp ;  10 ;  1 ; 0
+            Sink = Cmp ;  14 ;  1 ; -1
+            PointX = -4725 ; -4140 ; -4140
+            PointY = -4575 ; -4575 ; -4125
+            }
+        Line
+            {
+            Source = Cmp ;  14 ;  1 ; 0
+            Sink = Cmp ;  12 ;  1 ; -1
+            PointX = -3225 ; -3225 ; -2865
+            PointY = -3975 ; -3975 ; -3975
+            }
+        Line
+            {
+            Source = Cmp ;  9 ;  1 ; 0
+            Sink = Cmp ;  15 ;  1 ; -1
+            PointX = 75 ; 75 ; -1410
+            PointY = -75 ; -75 ; -75
+            }
+        Line
+            {
+            Source = Cmp ;  15 ;  1 ; 0
             Sink = Cmp ;  6 ;  1 ; -1
-            PointX = -1650 ; -1650 ; -4785
+            PointX = -2325 ; -2325 ; -4785
             PointY = 75 ; 525 ; 525
             }
         Line
             {
+            Source = Cmp ;  15 ;  1 ; 0
+            Sink = Cmp ;  4 ;  2 ; -1
+            PointX = -2325 ; -2325 ; -9990 ; -9990
+            PointY = 75 ; -300 ; -300 ; -2100
+            }
+        Line
+            {
+            Source = Cmp ;  7 ;  1 ; 0
+            Sink = Cmp ;  16 ;  1 ; -1
+            PointX = -6300 ; -6300 ; -2790
+            PointY = -2250 ; -2250 ; -2250
+            }
+        Line
+            {
+            Source = Cmp ;  14 ;  1 ; 0
+            Sink = Cmp ;  16 ;  2 ; -1
+            PointX = -3225 ; -3150 ; -3150 ; -2790
+            PointY = -3975 ; -3975 ; -1950 ; -1950
+            }
+        Line
+            {
             Source = Cmp ;  16 ;  1 ; 0
-            Sink = Cmp ;  1 ;  2 ; -1
-            PointX = -12600 ; -11940 ; -11940
-            PointY = -1725 ; -1725 ; -2250
+            Sink = Prt ;  2 ;  1 ; -1
+            PointX = -1875 ; -1875 ; -465
+            PointY = -2250 ; -2250 ; -2250
+            }
+        Line
+            {
+            Source = Cmp ;  16 ;  2 ; 0
+            Sink = Cmp ;  15 ;  2 ; -1
+            PointX = -1875 ; -1125 ; -1125 ; -1410
+            PointY = -1950 ; -1950 ; 225 ; 225
             }
         }
     }

@@ -17,7 +17,6 @@ class corner: public Simulator {
 	double speed_cars;
 	double size_corner;
 	double out_percent0;
-	double out_percent1;
 	
 	/*Atributes*/
 	double a_cars;
@@ -36,6 +35,20 @@ public:
 	Event lambda(double);
 	void exit();
 private: 
-	std::list<double> update_list(std::list<double> dist, double time);
+	std::list<double> update_list(std::list<double> dist, double time) {
+		/*new_list has "times" updated*/
+		std::list<double> new_list;
+		double new_time;
+		for (double i = 0; i<dist.size(); i++) {
+			new_time = dist.front() - time;
+
+			if (new_time >= 0) {
+				new_list.push_back(new_time);
+			} else {
+				/*ERROR*/
+			}
+		}
+		return new_list;
+	}	
 };
 #endif

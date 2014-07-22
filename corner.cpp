@@ -7,7 +7,6 @@ void corner::init(double t,...) {
 	speed_cars = va_arg( parameters, double);
 	size_corner = va_arg( parameters, double);
 	out_percent0 = va_arg( parameters, double);
-	out_percent0 = va_arg( parameters, double);
 
 	sigma=0;
 	a_cars = 0;
@@ -38,9 +37,6 @@ void corner::dint(double t) {
 }
 
 void corner::dext(Event x, double t) {
-	int *port = (int*)x.port;
-	double *value = (double*)x.value;
-
 	if ((a_cars >= 1) && (((a_cars + 1) * size_cars) <= size_corner) && ((size_corner - (update_list(dist, e)).back()) >= size_cars)) {
 		a_cars++;
 		dist = (update_list(dist, e));
@@ -77,20 +73,4 @@ Event corner::lambda(double t) {
 }
 void corner::exit() {
 
-}
-
-std::list<double> update_list(std::list<double> dist, double time) {
-	/*new_list has "times" updated*/
-	std::list <double> new_list;
-	double new_time;
-	for (int i = 0; i<dist.size(); i++) {
-		new_time = dist.front() - time;
-
-		if (new_time >= 0) {
-			new_list.push_back(new_time);
-		} else {
-			/*ERROR*/
-		}
-	}
-	return new_list;
 }
