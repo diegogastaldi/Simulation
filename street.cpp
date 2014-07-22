@@ -27,11 +27,11 @@ void street::dint(double t) {
 printLog("dint is initialized \n");
 	if (output && (amount_street >= 2)) {
 		amount_street--;
-		distance.pop_front();
+		distance.pop_back();
 		distance = update(distance, Sigma, output);
 		Sigma = distance.back()/speed_cars;
 	} else {
-		if (output && (amount_street >= 0)) {
+		if (output && ((amount_street == 0) || (amount_street == 1))) {
 			amount_street = 0;
 			distance.clear(); 
 			Sigma = std::numeric_limits<double>::max();
@@ -78,25 +78,25 @@ printLog("dext: value %f \n", *value);
 		}
 	} else {
 		if (x.port == 1) {
-			if ((amount_street >= 1) && (((amount_street + 1) * size_cars) <= size_street) && ((size_street - (update(distance, e, output)).front()) >= size_cars)) {
-				amount_street++;
-				distance = (update(distance, e, output));
+			if (amount_street == 0) {
+				amount_street = 1;
+				distance.clear();
 				distance.push_front(size_street);
-				Sigma = Sigma - e;
+				Sigma = (size_street/speed_cars);
 			} else {
-				if ((amount_street + 1) * size_cars > size_street) {
-					/*Error*/;
-printLog("dext street error \n");
+				if ((amount_street >= 1) && (((amount_street + 1) * size_cars) <= size_street) && ((size_street - (update(distance, e, output)).front()) >= size_cars)) {
+					amount_street++;
+					distance = (update(distance, e, output));
+					distance.push_front(size_street);
+					Sigma = Sigma - e;
 				} else {
-					if (((amount_street + 1) * size_cars <= size_street) && (amount_street > 0) && (size_street - (update(distance, e, output)).front() < size_cars)) {
-						distance = update(distance, e, output);
-						Sigma = Sigma - e;
+					if ((amount_street + 1) * size_cars > size_street) {
+						/*Error*/;
+printLog("dext street error \n");
 					} else {
-						if (amount_street == 0) {
-							amount_street = 1;
-							distance.clear();
-							distance.push_front(size_street);
-							Sigma = (size_street/speed_cars);
+						if (((amount_street + 1) * size_cars <= size_street) && (amount_street > 0) && (size_street - (update(distance, e, output)).front() < size_cars)) {
+							distance = update(distance, e, output);
+							Sigma = Sigma - e;
 						} else {
 							/*Error*/
 						}

@@ -46,57 +46,48 @@ private:
 		double new_time;
 
 		while (!dist.empty()) {
-			new_time = dist.front() - time;
+			new_time = dist.back() - (time * speed_cars);
 
 			if (new_time >= 0) {
-				new_list.push_back(new_time);
+				new_list.push_front(new_time);
 			} else {
 				if (!output)
-					new_list.push_back(0);
+					new_list.push_front(0);
 				else {
 					/*ERROR*/
 				}
 			}
-			dist.pop_front();
+			dist.pop_back();
 		}
 
-		/*this list has not times equals*/
-		std::list<double> list_not_enzimed;
-		int first;
-
-		while (!new_list.empty()) {
-			first = new_list.front();
-			new_list = update_tail(new_list, first);
-			list_not_enzimed.push_back(first);
-
-			new_list.pop_front();
-		}
+		new_list = update_tail(new_list);
 	
-		return list_not_enzimed;
+		return new_list;
 	}
 
-	std::list <double> update_tail(std::list <double> dist, double first) {
+	std::list <double> update_tail(std::list <double> dist) {
 		std::list<double> list_result;
-		bool finished = false;
-		double aux;
+		double first;
+		double second;
 
-		while (!dist.empty() && !finished) {
-			aux = dist.front();
-			if (aux <= first) {
-				aux = aux + size_cars;
-				list_result.push_back(aux);
-			} else {
-				finished = true;
-			}
-			dist.pop_front();
-		}	
+		if (dist.size() >= 2) {
+			first = dist.back();
+			list_result.push_front(first);
+			dist.pop_back();
+			
+			second = dist.back();
+			if (first >= second) {
+				second = first + size_cars;
+				dist.pop_back();
+				dist.push_back(second);
 
-		while (!dist.empty()) {
-			aux = dist.front();	
-			list_result.push_back(aux);
-			dist.pop_front();
-		}	
-		return list_result;	
+				list_result = update_tail(dist);
+			} 
+			return list_result;	
+		} else {
+			return dist;
+		}
+
 	}
 };
 #endif
