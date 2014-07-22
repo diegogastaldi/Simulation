@@ -22,7 +22,7 @@ class corner: public Simulator {
 	double a_cars;
 	std::list<double> dist;
 	double sigma;
-
+    double i;
 
 
 
@@ -39,14 +39,18 @@ private:
 		/*new_list has "times" updated*/
 		std::list<double> new_list;
 		double new_time;
-		for (double i = 0; i<dist.size(); i++) {
-			new_time = dist.front() - time;
+
+		while (!dist.empty()) {
+			new_time = dist.back() - (time * speed_cars);
 
 			if (new_time >= 0) {
-				new_list.push_back(new_time);
+				new_list.push_front(new_time);
 			} else {
 				/*ERROR*/
+				printLog("Error: in method update_list at corner.h {a car must leave the street, but was not called the function dint}\n");
+				std::exit(EXIT_FAILURE);
 			}
+			dist.pop_back();
 		}
 		return new_list;
 	}	

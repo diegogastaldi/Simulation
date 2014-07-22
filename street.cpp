@@ -103,5 +103,5 @@ Event street::lambda(double t) {
 	return Event(&i,0);
 }
 void street::exit() {
-printLog("exit: ont the street there is %f cars.\n", amount_street);
+     printLog("exit: ont the street there is %f cars.\n", amount_street);
 }

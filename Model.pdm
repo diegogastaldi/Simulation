@@ -47,7 +47,7 @@ Coupled
             Name = Street1
             Ports = 2 ; 1
             Path = sources/street.h
-            Description = Atomic DEVS model
+            Description = 
             Graphic
                 {
                 Position = -11805 ; -2730
@@ -61,7 +61,7 @@ Coupled
                 size_cars = Val; 2 ; size of the cars
                 speed_cars = Val; 8.3333 ; speed of the cars
                 size_street = Val; 100 ; size of the corner
-                initial_output = Val; 0 ; indicates that cars can get off the street.
+                initial_output = Val; 0 ; indicates that cars can get off the street (true = 1; false = 0)
                 }
             }
         Atomic
@@ -69,7 +69,7 @@ Coupled
             Name = Semaphore1
             Ports = 0 ; 1
             Path = sources/semaphore.h
-            Description = Atomic DEVS model
+            Description = 
             Graphic
                 {
                 Position = -13380 ; -3330
@@ -83,7 +83,7 @@ Coupled
                 time_red = Val; 20 ; Time in which the semaphore remain red.
                 time_green = Val; 17 ; time in which the semaphore remain green.
                 time_yellow = Val; 3 ; time in which the semaphore remain yellow.
-                initial_color = Val; 0 ; initial color of the semaphore
+                initial_color = Val; 0 ; initial color of the semaphore (zero  -> red ; one -> yellow; two ->green)
                 }
             }
         Atomic
@@ -91,7 +91,7 @@ Coupled
             Name = Generator2
             Ports = 0 ; 1
             Path = sources/car_generator.h
-            Description = Atomic DEVS model
+            Description = 
             Graphic
                 {
                 Position = -5505 ; -3705
@@ -182,7 +182,7 @@ Coupled
             Name = Street2
             Ports = 2 ; 1
             Path = sources/street.h
-            Description = Atomic DEVS model
+            Description = 
             Graphic
                 {
                 Position = -7080 ; -2580
@@ -196,73 +196,7 @@ Coupled
                 size_cars = Val; 2 ; size of the cars
                 speed_cars = Val; 8.3333 ; speed of the cars
                 size_street = Val; 80 ; size of the corner
-                initial_output = Val; 1 ; 
-                }
-            }
-        Atomic
-            {
-            Name = Semaphore2
-            Ports = 0 ; 1
-            Path = sources/semaphore.h
-            Description = Atomic DEVS model
-            Graphic
-                {
-                Position = -8505 ; -3480
-                Dimension = 675 ; 675
-                Direction = Right
-                Color = 11
-                Icon = None
-                }
-            Parameters
-                {
-                time_red = Val; 20 ; Time in which the semaphore remain red.
-                time_green = Val; 17 ; time in which the semaphore remain green.
-                time_yellow = Val; 3 ; time in which the semaphore remain yellow.
-                initial_color = Val; 2 ; initial color of the semaphore
-                }
-            }
-        Atomic
-            {
-            Name = Semaphore3
-            Ports = 0 ; 1
-            Path = sources/semaphore.h
-            Description = Atomic DEVS model
-            Graphic
-                {
-                Position = 195 ; -405
-                Dimension = 675 ; 675
-                Direction = Left
-                Color = 11
-                Icon = None
-                }
-            Parameters
-                {
-                time_red = Val; 20 ; Time in which the semaphore remain red.
-                time_green = Val; 17 ; time in which the semaphore remain green.
-                time_yellow = Val; 3 ; time in which the semaphore remain yellow.
-                initial_color = Val; 2 ; initial color of the semaphore
-                }
-            }
-        Atomic
-            {
-            Name = Semaphore4
-            Ports = 0 ; 1
-            Path = sources/semaphore.h
-            Description = Atomic DEVS model
-            Graphic
-                {
-                Position = -5505 ; -4905
-                Dimension = 675 ; 675
-                Direction = Right
-                Color = 11
-                Icon = None
-                }
-            Parameters
-                {
-                time_red = Val; 20 ; Time in which the semaphore remain red.
-                time_green = Val; 17 ; time in which the semaphore remain green.
-                time_yellow = Val; 3 ; time in which the semaphore remain yellow.
-                initial_color = Val; 0 ; initial color of the semaphore
+                initial_output = Val; 1 ; indicates that cars can get off the street (true = 1; false = 0)
                 }
             }
         Atomic
@@ -273,7 +207,7 @@ Coupled
             Description = Plot input signal using GnuPlot
             Graphic
                 {
-                Position = -10830 ; -1335
+                Position = -10905 ; -1335
                 Dimension = 675 ; 720
                 Direction = Right
                 Color = 15
@@ -320,7 +254,7 @@ Coupled
             Name = Generator1
             Ports = 0 ; 1
             Path = sources/car_generator.h
-            Description = Atomic DEVS model
+            Description = 
             Graphic
                 {
                 Position = -13380 ; -2055
@@ -339,7 +273,7 @@ Coupled
             Name = Street4
             Ports = 2 ; 1
             Path = sources/street.h
-            Description = Atomic DEVS model
+            Description = 
             Graphic
                 {
                 Position = -4005 ; -4305
@@ -353,7 +287,7 @@ Coupled
                 size_cars = Val; 2 ; size of the cars
                 speed_cars = Val; 8.3333 ; speed of the cars
                 size_street = Val; 100 ; size of the corner
-                initial_output = Val; 0 ; indicates that cars can get off the street.
+                initial_output = Val; 0 ; indicates that cars can get off the street (true = 1; false = 0)
                 }
             }
         Atomic
@@ -361,7 +295,7 @@ Coupled
             Name = Street3
             Ports = 2 ; 1
             Path = sources/street.h
-            Description = Atomic DEVS model
+            Description = 
             Graphic
                 {
                 Position = -2205 ; -255
@@ -375,7 +309,7 @@ Coupled
                 size_cars = Val; 2 ; size of the cars
                 speed_cars = Val; 18.0556 ; speed of the cars
                 size_street = Val; 100 ; size of the corner
-                initial_output = Val; 2 ; indicates that cars can get off the street.
+                initial_output = Val; 2 ; indicates that cars can get off the street (true = 1; false = 0)
                 }
             }
         Atomic
@@ -398,6 +332,72 @@ Coupled
                 speed_cars = Val; 10 ; 
                 size_corner = Val; 10 ; 
                 out_percent0 = Val; 50 ; 
+                }
+            }
+        Atomic
+            {
+            Name = Semaphore2
+            Ports = 0 ; 1
+            Path = sources/semaphore.h
+            Description = 
+            Graphic
+                {
+                Position = -8430 ; -3330
+                Dimension = 675 ; 675
+                Direction = Right
+                Color = 11
+                Icon = None
+                }
+            Parameters
+                {
+                time_red = Val; 20 ; Time in which the semaphore remain red.
+                time_green = Val; 17 ; time in which the semaphore remain green.
+                time_yellow = Val; 3 ; time in which the semaphore remain yellow.
+                initial_color = Val; 0 ; two ->green)
+                }
+            }
+        Atomic
+            {
+            Name = Semaphore3
+            Ports = 0 ; 1
+            Path = sources/semaphore.h
+            Description = 
+            Graphic
+                {
+                Position = 45 ; -405
+                Dimension = 675 ; 675
+                Direction = Left
+                Color = 11
+                Icon = None
+                }
+            Parameters
+                {
+                time_red = Val; 20 ; Time in which the semaphore remain red.
+                time_green = Val; 17 ; time in which the semaphore remain green.
+                time_yellow = Val; 3 ; time in which the semaphore remain yellow.
+                initial_color = Val; 2 ; two ->green)
+                }
+            }
+        Atomic
+            {
+            Name = Semaphore4
+            Ports = 0 ; 1
+            Path = sources/semaphore.h
+            Description = 
+            Graphic
+                {
+                Position = -6555 ; -4455
+                Dimension = 675 ; 675
+                Direction = Right
+                Color = 11
+                Icon = None
+                }
+            Parameters
+                {
+                time_red = Val; 20 ; Time in which the semaphore remain red.
+                time_green = Val; 17 ; time in which the semaphore remain green.
+                time_yellow = Val; 3 ; time in which the semaphore remain yellow.
+                initial_color = Val; 2 ; two ->green)
                 }
             }
         Line
@@ -430,16 +430,9 @@ Coupled
             }
         Line
             {
-            Source = Cmp ;  8 ;  1 ; 0
-            Sink = Cmp ;  7 ;  1 ; -1
-            PointX = -7725 ; -7275 ; -7275 ; -7215
-            PointY = -3150 ; -3150 ; -2400 ; -2400
-            }
-        Line
-            {
             Source = Cmp ;  1 ;  1 ; 0
-            Sink = Cmp ;  11 ;  1 ; -1
-            PointX = -11025 ; -10965 ; -10965
+            Sink = Cmp ;  8 ;  1 ; -1
+            PointX = -11025 ; -11040 ; -11040
             PointY = -2400 ; -2400 ; -975
             }
         Line
@@ -451,7 +444,7 @@ Coupled
             }
         Line
             {
-            Source = Cmp ;  13 ;  1 ; 0
+            Source = Cmp ;  10 ;  1 ; 0
             Sink = Cmp ;  1 ;  2 ; -1
             PointX = -12600 ; -11940 ; -11940
             PointY = -1725 ; -1725 ; -2250
@@ -459,41 +452,27 @@ Coupled
         Line
             {
             Source = Cmp ;  3 ;  1 ; 0
-            Sink = Cmp ;  14 ;  2 ; -1
+            Sink = Cmp ;  11 ;  2 ; -1
             PointX = -4725 ; -4140 ; -4140
             PointY = -3375 ; -3375 ; -3825
             }
         Line
             {
-            Source = Cmp ;  10 ;  1 ; 0
-            Sink = Cmp ;  14 ;  1 ; -1
-            PointX = -4725 ; -4140 ; -4140
-            PointY = -4575 ; -4575 ; -4125
-            }
-        Line
-            {
-            Source = Cmp ;  14 ;  1 ; 0
-            Sink = Cmp ;  12 ;  1 ; -1
+            Source = Cmp ;  11 ;  1 ; 0
+            Sink = Cmp ;  9 ;  1 ; -1
             PointX = -3225 ; -3225 ; -2865
             PointY = -3975 ; -3975 ; -3975
             }
         Line
             {
-            Source = Cmp ;  9 ;  1 ; 0
-            Sink = Cmp ;  15 ;  1 ; -1
-            PointX = 75 ; 75 ; -1410
-            PointY = -75 ; -75 ; -75
-            }
-        Line
-            {
-            Source = Cmp ;  15 ;  1 ; 0
+            Source = Cmp ;  12 ;  1 ; 0
             Sink = Cmp ;  6 ;  1 ; -1
             PointX = -2325 ; -2325 ; -4785
             PointY = 75 ; 525 ; 525
             }
         Line
             {
-            Source = Cmp ;  15 ;  1 ; 0
+            Source = Cmp ;  12 ;  1 ; 0
             Sink = Cmp ;  4 ;  2 ; -1
             PointX = -2325 ; -2325 ; -9990 ; -9990
             PointY = 75 ; -300 ; -300 ; -2100
@@ -501,30 +480,51 @@ Coupled
         Line
             {
             Source = Cmp ;  7 ;  1 ; 0
-            Sink = Cmp ;  16 ;  1 ; -1
+            Sink = Cmp ;  13 ;  1 ; -1
             PointX = -6300 ; -6300 ; -2790
             PointY = -2250 ; -2250 ; -2250
             }
         Line
             {
-            Source = Cmp ;  14 ;  1 ; 0
-            Sink = Cmp ;  16 ;  2 ; -1
+            Source = Cmp ;  11 ;  1 ; 0
+            Sink = Cmp ;  13 ;  2 ; -1
             PointX = -3225 ; -3150 ; -3150 ; -2790
             PointY = -3975 ; -3975 ; -1950 ; -1950
             }
         Line
             {
-            Source = Cmp ;  16 ;  1 ; 0
+            Source = Cmp ;  13 ;  1 ; 0
             Sink = Prt ;  2 ;  1 ; -1
             PointX = -1875 ; -1875 ; -465
             PointY = -2250 ; -2250 ; -2250
             }
         Line
             {
-            Source = Cmp ;  16 ;  2 ; 0
-            Sink = Cmp ;  15 ;  2 ; -1
+            Source = Cmp ;  13 ;  2 ; 0
+            Sink = Cmp ;  12 ;  2 ; -1
             PointX = -1875 ; -1125 ; -1125 ; -1410
             PointY = -1950 ; -1950 ; 225 ; 225
+            }
+        Line
+            {
+            Source = Cmp ;  14 ;  1 ; 0
+            Sink = Cmp ;  7 ;  1 ; -1
+            PointX = -7650 ; -7215 ; -7215
+            PointY = -3000 ; -3000 ; -2400
+            }
+        Line
+            {
+            Source = Cmp ;  15 ;  1 ; 0
+            Sink = Cmp ;  12 ;  1 ; -1
+            PointX = -75 ; -75 ; -1410
+            PointY = -75 ; -75 ; -75
+            }
+        Line
+            {
+            Source = Cmp ;  16 ;  1 ; 0
+            Sink = Cmp ;  11 ;  1 ; -1
+            PointX = -5775 ; -5775 ; -4140
+            PointY = -4125 ; -4125 ; -4125
             }
         }
     }
