@@ -59,7 +59,7 @@ Coupled
             Parameters
                 {
                 size_cars = Val; 2 ; size of the cars
-                speed_cars = Val; 30000 ; speed of the cars
+                speed_cars = Val; 8.3333 ; speed of the cars
                 size_street = Val; 100 ; size of the corner
                 initial_output = Val; 0 ; indicates that cars can get off the street.
                 }
@@ -194,7 +194,7 @@ Coupled
             Parameters
                 {
                 size_cars = Val; 2 ; size of the cars
-                speed_cars = Val; 30000 ; speed of the cars
+                speed_cars = Val; 8.3333 ; speed of the cars
                 size_street = Val; 80 ; size of the corner
                 initial_output = Val; 1 ; 
                 }
@@ -351,7 +351,7 @@ Coupled
             Parameters
                 {
                 size_cars = Val; 2 ; size of the cars
-                speed_cars = Val; 30000 ; speed of the cars
+                speed_cars = Val; 8.3333 ; speed of the cars
                 size_street = Val; 100 ; size of the corner
                 initial_output = Val; 0 ; indicates that cars can get off the street.
                 }
@@ -373,7 +373,7 @@ Coupled
             Parameters
                 {
                 size_cars = Val; 2 ; size of the cars
-                speed_cars = Val; 65000 ; speed of the cars
+                speed_cars = Val; 18.0556 ; speed of the cars
                 size_street = Val; 100 ; size of the corner
                 initial_output = Val; 2 ; indicates that cars can get off the street.
                 }
