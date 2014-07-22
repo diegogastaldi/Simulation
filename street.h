@@ -44,7 +44,8 @@ private:
 		/*new_list has "times" updated*/
 		std::list <double> new_list;
 		double new_time;
-		for (int i = 0; i<dist.size(); i++) {
+
+		while (!dist.empty()) {
 			new_time = dist.front() - time;
 
 			if (new_time >= 0) {
@@ -56,14 +57,19 @@ private:
 					/*ERROR*/
 				}
 			}
+			dist.pop_front();
 		}
+
 		/*this list has not times equals*/
 		std::list<double> list_not_enzimed;
 		int first;
-		for (int i = 0; i<new_list.size(); i++) {
+
+		while (!new_list.empty()) {
 			first = new_list.front();
 			new_list = update_tail(new_list, first);
 			list_not_enzimed.push_back(first);
+
+			new_list.pop_front();
 		}
 	
 		return list_not_enzimed;
@@ -73,7 +79,8 @@ private:
 		std::list<double> list_result;
 		bool finished = false;
 		double aux;
-		for(int i = 0; i < dist.size(); (i++ && !finished)) {	
+
+		while (!dist.empty() && !finished) {
 			aux = dist.front();
 			if (aux <= first) {
 				aux = aux + size_cars;
@@ -81,10 +88,13 @@ private:
 			} else {
 				finished = true;
 			}
+			dist.pop_front();
 		}	
-		for(int i = 0; i < dist.size(); i++) {	
+
+		while (!dist.empty()) {
 			aux = dist.front();	
 			list_result.push_back(aux);
+			dist.pop_front();
 		}	
 		return list_result;	
 	}
