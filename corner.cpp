@@ -21,6 +21,7 @@ double corner::ta(double t) {
 
 void corner::dint(double t) {
 	if (a_cars >= 2) {
+        // removes the first to enter car the street
 		a_cars--;
 		dist.pop_back();
 		dist = update_list(dist, sigma, t);
@@ -53,12 +54,14 @@ void corner::dext(Event x, double t) {
 			std::exit(EXIT_FAILURE);
 		} else {
             if ((a_cars >= 1) && (((a_cars + 1) * size_cars) <= size_corner) && ((size_corner - (update_list(dist, e, t)).front()) >= size_cars)) {
+            /*if the car can enter to the street */
 	         	a_cars++;
               	dist = (update_list(dist, e, t));
                	dist.push_front(size_corner);
                	sigma = sigma - e;
             } else {
                 if (((a_cars + 1) * size_cars <= size_corner) && (a_cars > 0) && (size_corner - update_list(dist, e, t).front() < size_cars)) {
+                /* if the last car into the street did not advance enough */
 				    dist = update_list(dist, e, t);
 				    sigma = sigma - e;
         			printLog("Warning: Corner {a car was ignored because there is not place} TIME: %f\n", t);
@@ -70,7 +73,7 @@ void corner::dext(Event x, double t) {
 
 Event corner::lambda(double t) {
 	double num_rand = rand() % 101;
-	
+	/*select the port to output*/
 	if (num_rand <= out_percent0) {
 		return Event(&i,0);
 	} else {
