@@ -21,8 +21,8 @@ class corner: public Simulator {
 	/*Atributes*/
 	double a_cars;            // amount cars
 	std::list<double> dist;   // distance from each car to next corner
-	double sigma;             // time of output of the next car
-    double i;                 
+	double sigma;             // time of out of the next car
+    double i;                 // contains the value of out
 
 
 
