@@ -32,6 +32,9 @@ double i;
 
 
 
+
+
+
 public:
 	car_generator(const char *n): Simulator(n) {};
 	void init(double, ...);

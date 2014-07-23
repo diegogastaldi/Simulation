@@ -25,7 +25,7 @@ void street::dint(double t) {
 	if (output && (amount_street >= 2)) {
 		amount_street--;
 		distance.pop_back();
-		distance = update(distance, Sigma, output);
+		distance = update(distance, Sigma, output, t);
 		Sigma = distance.back()/speed_cars;
 	} else {
 		if (output && ((amount_street == 0) || (amount_street == 1))) {
@@ -34,12 +34,12 @@ void street::dint(double t) {
 			Sigma = std::numeric_limits<double>::max();
 		} else {
 			if (!output) {
-				distance = update(distance, Sigma, output);
+				distance = update(distance, Sigma, output, t);
 				Sigma = std::numeric_limits<double>::max();
 			} else {
 				if (amount_street < 0) {	
 					/*ERROR*/;
-					printLog("Error: in method dint at street.cpp {a car must leave, but there is not a car on the street}\n");
+					printLog("Error: in method dint at street.cpp {a car must leave, but there is not a car on the street} TIME: %f\n", t);
 					std::exit(EXIT_FAILURE);
 				}
 			}
@@ -56,12 +56,12 @@ void street::dext(Event x, double t) {
 			output = (value[0] == 2);
 		} else {
 			if (value[0] == 2)  {
-				distance = update(distance, e, output);
+				distance = update(distance, e, output, t);
 				output = true;
-				Sigma = Sigma - e;
+				Sigma = distance.back() / speed_cars;
 			} else {
 				if (value[0] != 2) {
-					distance = update(distance, e, output);
+					distance = update(distance, e, output, t);
 					output = false;
 					Sigma = std::numeric_limits<double>::max();
 				}
@@ -76,21 +76,22 @@ void street::dext(Event x, double t) {
 				if (output)
 					Sigma = (size_street/speed_cars);
 			} else {
-				if ((amount_street >= 1) && (((amount_street + 1) * size_cars) <= size_street) && ((size_street - (update(distance, e, output)).front()) >= size_cars)) {
-					amount_street++;
-					distance = (update(distance, e, output));
-					distance.push_front(size_street);
-					Sigma = Sigma - e;
-				} else {
-					if ((amount_street + 1) * size_cars > size_street) {
-						/*Error*/;
-						printLog("Error: in method dext at street.cpp {a car must leave, but there is not place on the street}\n");
-						std::exit(EXIT_FAILURE);
-					} else {
-						if (((amount_street + 1) * size_cars <= size_street) && (amount_street > 0) && (size_street - (update(distance, e, output)).front() < size_cars)) {
-							distance = update(distance, e, output);
+               	if ((amount_street + 1) * size_cars > size_street) {
+					/*Error*/;
+					printLog("Error: in method dext at street.cpp {a car must leave, but there is not place on the street} TIME: %f\n", t);
+					std::exit(EXIT_FAILURE);
+				}   
+                else {
+                    if ((amount_street >= 1) && (((amount_street + 1) * size_cars) <= size_street) && ((size_street - (update(distance, e, output, t)).front()) >= size_cars)) {
+					    amount_street++;
+    				    distance = (update(distance, e, output, t));
+					    distance.push_front(size_street);
+					    Sigma = Sigma - e;
+				    } else {
+						if (((amount_street + 1) * size_cars <= size_street) && (amount_street > 0) && (size_street - (update(distance, e, output, t)).front() < size_cars)) {
+							distance = update(distance, e, output, t);
 							Sigma = Sigma - e;
-							printLog("Warning: {a car was ignored because there is not place}\n");
+							printLog("Warning: Street {a car was ignored because there is not place}TIME: %f\n", t);
 						}
 					}
 				}

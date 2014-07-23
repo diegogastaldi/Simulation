@@ -40,29 +40,31 @@ public:
 	Event lambda(double);
 	void exit();
 private:
-	std::list <double> update(std::list <double> dist, double time, bool output) {
+	std::list <double> update(std::list <double> dist, double time, bool output, double time_simulation) {
 		/*new_list has "times" updated*/
 		std::list <double> new_list;
 		double new_time;
-
+        bool crowding = false;
+        
 		while (!dist.empty()) {
 			new_time = dist.back() - (time * speed_cars);
 
 			if (new_time >= 0) {
 				new_list.push_front(new_time);
 			} else {
-				if (!output)
+				if (!output) {
 					new_list.push_front(0);
-				else {
+					crowding = true;
+				} else {
 					/*ERROR*/
-					printLog("Error: in method update at street.h {a car must leave the street, but was not called the function dint}\n");
+					printLog("Error: in method update at street.h {a car must leave the street, but was not called the function dint} TIME %f\n", time_simulation);
 					std::exit(EXIT_FAILURE);
 				}
 			}
 			dist.pop_back();
 		}
-
-		new_list = update_tail(new_list);
+        if (crowding)
+        	new_list = update_tail(new_list);
 	
 		return new_list;
 	}
@@ -83,13 +85,23 @@ private:
 				dist.pop_back();
 				dist.push_back(second);
 
-				list_result = update_tail(dist);
-			} 
+				list_result = push_all_front(update_tail(dist), list_result);
+			} else {
+                   list_result = push_all_front(dist, list_result);
+            }
 			return list_result;	
 		} else {
 			return dist;
 		}
 
 	}
+
+	std::list <double> push_all_front(std::list <double> list_up, std::list <double> list_res) {
+        while (!list_up.empty()) {
+            list_res.push_front(list_up.back());
+            list_up.pop_back();
+        }
+        return list_res;
+    }
 };
 #endif

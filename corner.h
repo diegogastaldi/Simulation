@@ -35,7 +35,7 @@ public:
 	Event lambda(double);
 	void exit();
 private: 
-	std::list<double> update_list(std::list<double> dist, double time) {
+	std::list<double> update_list(std::list<double> dist, double time, double time_simulation) {
 		/*new_list has "times" updated*/
 		std::list<double> new_list;
 		double new_time;
@@ -47,7 +47,7 @@ private:
 				new_list.push_front(new_time);
 			} else {
 				/*ERROR*/
-				printLog("Error: in method update_list at corner.h {a car must leave the street, but was not called the function dint}\n");
+				printLog("Error: in method update_list at corner.h {a car must leave the street, but was not called the function dint} TIME: &f\n", time_simulation);
 				std::exit(EXIT_FAILURE);
 			}
 			dist.pop_back();

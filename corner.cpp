@@ -23,7 +23,7 @@ void corner::dint(double t) {
 	if (a_cars >= 2) {
 		a_cars--;
 		dist.pop_back();
-		dist = update_list(dist, sigma);
+		dist = update_list(dist, sigma, t);
 		sigma = dist.back()/speed_cars;
 	} else {
 		if ((a_cars == 1) || (a_cars == 0)) {
@@ -33,7 +33,7 @@ void corner::dint(double t) {
 		} else {
 			if (a_cars < 0) {
 				/*ERROR*/;
-				printLog("Error: in method dint at corner.cpp {a car must leave, but there is not a car on the corner}\n");
+				printLog("Error: in method dint at corner.cpp {a car must leave, but there is not a car on the corner} TIME: %f\n", t);
  				std::exit(EXIT_FAILURE);
 			}
 		}
@@ -49,19 +49,19 @@ void corner::dext(Event x, double t) {
 	} else {
 		if (((a_cars + 1) * size_cars > size_corner)) {
     		/*Error*/;
-			printLog("Error: in method dext at corner.cpp {a car must leave, but there is not place on the corner}\n");
+			printLog("Error: in method dext at corner.cpp {a car must leave, but there is not place on the corner} TIME: %f\n", t);
 			std::exit(EXIT_FAILURE);
 		} else {
-            if ((a_cars >= 1) && (((a_cars + 1) * size_cars) <= size_corner) && ((size_corner - (update_list(dist, e)).front()) >= size_cars)) {
+            if ((a_cars >= 1) && (((a_cars + 1) * size_cars) <= size_corner) && ((size_corner - (update_list(dist, e, t)).front()) >= size_cars)) {
 	         	a_cars++;
-              	dist = (update_list(dist, e));
+              	dist = (update_list(dist, e, t));
                	dist.push_front(size_corner);
                	sigma = sigma - e;
             } else {
-                if (((a_cars + 1) * size_cars <= size_corner) && (a_cars > 0) && (size_corner - update_list(dist, e).front() < size_cars)) {
-				    dist = update_list(dist, e);
+                if (((a_cars + 1) * size_cars <= size_corner) && (a_cars > 0) && (size_corner - update_list(dist, e, t).front() < size_cars)) {
+				    dist = update_list(dist, e, t);
 				    sigma = sigma - e;
-        			printLog("Warning: {a car was ignored because there is not place}\n");
+        			printLog("Warning: Corner {a car was ignored because there is not place} TIME: %f\n", t);
 			    }
 			}
 		}
