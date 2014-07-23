@@ -9,7 +9,7 @@ Note:
   then ignore the corner many cars.
 
 
-falta: 	- actualizar doc
+falta: 	
 	- agregar comentarios
 	- incorporar funcion exponencial
 
