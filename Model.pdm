@@ -35,7 +35,7 @@ Coupled
             Parameters
                 {
                 size_cars = Val; 2 ; 
-                speed_cars = Val; 10 ; 
+                speed_cars = Val; 17 ; 
                 size_corner = Val; 10 ; 
                 out_percent0 = Val; 40 ; 
                 }
@@ -254,7 +254,7 @@ Coupled
                 }
             Parameters
                 {
-                parameter_distribution = Val; 10 ; 
+                parameter_distribution = Val; 3 ; 
                 }
             }
         Atomic
@@ -273,7 +273,7 @@ Coupled
                 }
             Parameters
                 {
-                parameter_distribution = Val; 10 ; 
+                parameter_distribution = Val; 5 ; 
                 }
             }
         Atomic

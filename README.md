@@ -8,10 +8,12 @@ Note:
 - If on the corner, the cars have less speed on That street, 
   then ignore the corner many cars.
 
+  For that the system no collapse, or the street that runs from two corner to one corner decender its 
+  speed or the one corner increase its speed.
 
 falta: 	
 	- agregar comentarios
-	- incorporar funcion exponencial
+
 
 
 

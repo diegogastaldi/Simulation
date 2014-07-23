@@ -4,15 +4,19 @@ void car_generator::init(double t,...) {
     va_list parameters;
     va_start(parameters,t);
 
+    /* This is the parameter of the exponential distribution*/
     parameter_distribution=va_arg(parameters, double);
+    
+    /*At time Zero, the generator sends a car*/
     sigma = 0;
 
+    /*Output*/
     i = 1;
+    
 	/*Initialize seed*/
 	srand(time(NULL));
 }
 double car_generator::ta(double t) {
-    //This function returns a double.
     return sigma;
 }
 void car_generator::dint(double t) {
@@ -22,8 +26,8 @@ void car_generator::dint(double t) {
            
     //Put it as a parameter to the inverse distribution function.
     sigma = (double)-parameter_distribution*log(r);
-    printLog("%f\n", sigma);
-/*sigma = parameter_distribution;*/
+    /*    printLog("%f\n", sigma);*/
+    /*sigma = parameter_distribution;*/
 }
 void car_generator::dext(Event x, double t) {
 //The input event is in the 'x' variable.
@@ -32,8 +36,10 @@ void car_generator::dext(Event x, double t) {
 //     'x.port' is the port number
 //     'e' is the time elapsed since last transition
 
+/* This module receives no extern events*/
 }
 Event car_generator::lambda(double t) {
+/*Always sends one*/
 return Event(&i,0);
 }
 void car_generator::exit() {

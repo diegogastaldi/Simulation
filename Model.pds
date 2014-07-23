@@ -3,7 +3,7 @@ Root-Coordinator
   Simulator
    {
     Path = sources/corner.h
-    Parameters = 2.000000e+00,1.000000e+01,1.000000e+01,4.000000e+01
+    Parameters = 2.000000e+00,1.700000e+01,1.000000e+01,4.000000e+01
    }
   Simulator
    {
@@ -53,12 +53,12 @@ Root-Coordinator
   Simulator
    {
     Path = sources/car_generator.h
-    Parameters = 1.000000e+01
+    Parameters = 3.000000e+00
    }
   Simulator
    {
     Path = sources/car_generator.h
-    Parameters = 1.000000e+01
+    Parameters = 5.000000e+00
    }
   Simulator
    {
