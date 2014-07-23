@@ -5,6 +5,7 @@
 #include "simulator.h"
 #include "event.h"
 #include "stdarg.h"
+#include "cmath"
 
 
 
