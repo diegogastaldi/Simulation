@@ -7,7 +7,8 @@ void corner::init(double t,...) {
 	speed_cars = va_arg( parameters, double);
 	size_corner = va_arg( parameters, double);
 	out_percent0 = va_arg( parameters, double);
-
+	corner_number = va_arg( parameters, double);
+	
 	sigma = std::numeric_limits<double>::max();
 	a_cars = 0;
 	
@@ -21,7 +22,6 @@ double corner::ta(double t) {
 
 void corner::dint(double t) {
 	if (a_cars >= 2) {
-        // removes the first to enter car the street
 		a_cars--;
 		dist.pop_back();
 		dist = update_list(dist, sigma, t);
@@ -53,18 +53,15 @@ void corner::dext(Event x, double t) {
 			printLog("Error: in method dext at corner.cpp {a car must leave, but there is not place on the corner} TIME: %f\n", t);
 			std::exit(EXIT_FAILURE);
 		} else {
-            if ((a_cars >= 1) && (((a_cars + 1) * size_cars) <= size_corner) && ((size_corner - (update_list(dist, e, t)).front()) >= size_cars)) {
-            /*if the car can enter to the street */
+            dist = update_list(dist, e, t);
+            if ((a_cars >= 1) && ((size_corner - dist.front()) >= size_cars)) {
 	         	a_cars++;
-              	dist = (update_list(dist, e, t));
                	dist.push_front(size_corner);
                	sigma = sigma - e;
             } else {
-                if (((a_cars + 1) * size_cars <= size_corner) && (a_cars > 0) && (size_corner - update_list(dist, e, t).front() < size_cars)) {
-                /* if the last car into the street did not advance enough */
-				    dist = update_list(dist, e, t);
+                if ((a_cars >= 1) && (size_corner - dist.front() < size_cars)) {
 				    sigma = sigma - e;
-        			printLog("Warning: Corner {a car was ignored because there is not place} TIME: %f\n", t);
+        			printLog("Warning: Corner %f {a car was ignored because there is not place} TIME: %f\n", corner_number, t);
 			    }
 			}
 		}
@@ -73,7 +70,7 @@ void corner::dext(Event x, double t) {
 
 Event corner::lambda(double t) {
 	double num_rand = rand() % 101;
-	/*select the port to output*/
+	
 	if (num_rand <= out_percent0) {
 		return Event(&i,0);
 	} else {
@@ -81,5 +78,5 @@ Event corner::lambda(double t) {
 	}
 }
 void corner::exit() {
-     printLog("exit: on the corner there is %f cars.\n", a_cars);
+     printLog("exit: on the corner %f there is %f cars.\n", corner_number, a_cars);
 }

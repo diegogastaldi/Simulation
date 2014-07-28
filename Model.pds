@@ -3,32 +3,32 @@ Root-Coordinator
   Simulator
    {
     Path = sources/corner.h
-    Parameters = 2.000000e+00,1.700000e+01,1.000000e+01,4.000000e+01
+    Parameters = 2.000000e+00,1.805560e+01,1.000000e+01,4.000000e+01,1.000000e+00
    }
   Simulator
    {
     Path = sources/corner.h
-    Parameters = 2.000000e+00,1.000000e+01,1.000000e+01,5.000000e+01
+    Parameters = 2.000000e+00,1.000000e+01,1.000000e+01,5.000000e+01,2.000000e+00
    }
   Simulator
    {
     Path = sources/street.h
-    Parameters = 2.000000e+00,8.333300e+00,1.000000e+02,0.000000e+00
+    Parameters = 2.000000e+00,8.333300e+00,1.000000e+02,0.000000e+00,1.000000e+00
    }
   Simulator
    {
     Path = sources/street.h
-    Parameters = 2.000000e+00,1.805560e+01,1.000000e+02,1.000000e+00
+    Parameters = 2.000000e+00,1.805560e+01,1.000000e+02,1.000000e+00,3.000000e+00
    }
   Simulator
    {
     Path = sources/street.h
-    Parameters = 2.000000e+00,8.333300e+00,1.000000e+02,1.000000e+00
+    Parameters = 2.000000e+00,8.333300e+00,1.000000e+02,1.000000e+00,4.000000e+00
    }
   Simulator
    {
     Path = sources/street.h
-    Parameters = 2.000000e+00,8.333300e+00,8.000000e+01,0.000000e+00
+    Parameters = 2.000000e+00,8.333300e+00,8.000000e+01,0.000000e+00,2.000000e+00
    }
   Simulator
    {

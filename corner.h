@@ -17,12 +17,12 @@ class corner: public Simulator {
 	double speed_cars;
 	double size_corner;
 	double out_percent0;
-	
+	double corner_number;
 	/*Atributes*/
-	double a_cars;            // amount cars
-	std::list<double> dist;   // distance from each car to next corner
-	double sigma;             // time of out of the next car
-    double i;                 // contains the value of out
+	double a_cars;
+	std::list<double> dist;
+	double sigma;
+    double i;
 
 
 
@@ -35,7 +35,6 @@ public:
 	Event lambda(double);
 	void exit();
 private: 
-    /* This method updates the list according to the time that passed*/     
 	std::list<double> update_list(std::list<double> dist, double time, double time_simulation) {
 		/*new_list has "times" updated*/
 		std::list<double> new_list;

@@ -35,9 +35,10 @@ Coupled
             Parameters
                 {
                 size_cars = Val; 2 ; 
-                speed_cars = Val; 17 ; 
+                speed_cars = Val; 18.0556 ; 
                 size_corner = Val; 10 ; 
                 out_percent0 = Val; 40 ; 
+                Corner Number = Val; 1 ; Corner identifier for output reports.
                 }
             }
         Atomic
@@ -60,6 +61,7 @@ Coupled
                 speed_cars = Val; 10 ; 
                 size_corner = Val; 10 ; 
                 out_percent0 = Val; 50 ; 
+                Corner Number = Val; 2 ; Corner identifier for output reports.
                 }
             }
         Atomic
@@ -82,6 +84,7 @@ Coupled
                 speed_cars = Val; 8.3333 ; speed of the cars
                 size_street = Val; 100 ; size of the corner
                 initial_output = Val; 0 ; false = 0)
+                Street number = Val; 1 ; Street identifier for output reports.
                 }
             }
         Atomic
@@ -104,6 +107,7 @@ Coupled
                 speed_cars = Val; 18.0556 ; speed of the cars
                 size_street = Val; 100 ; size of the corner
                 initial_output = Val; 1 ; false = 0)
+                Street Number = Val; 3 ; Street identifier for output reports.
                 }
             }
         Atomic
@@ -126,6 +130,7 @@ Coupled
                 speed_cars = Val; 8.3333 ; speed of the cars
                 size_street = Val; 100 ; size of the corner
                 initial_output = Val; 1 ; false = 0)
+                Street Number = Val; 4 ; Street identifier for output reports.
                 }
             }
         Atomic
@@ -148,6 +153,7 @@ Coupled
                 speed_cars = Val; 8.3333 ; speed of the cars
                 size_street = Val; 80 ; size of the corner
                 initial_output = Val; 0 ; false = 0)
+                Street Number = Val; 2 ; Street identifier for output reports.
                 }
             }
         Atomic
@@ -158,7 +164,7 @@ Coupled
             Description = 
             Graphic
                 {
-                Position = -13380 ; -3330
+                Position = -13380 ; -3405
                 Dimension = 675 ; 675
                 Direction = Right
                 Color = 11
@@ -224,7 +230,7 @@ Coupled
             Description = 
             Graphic
                 {
-                Position = -6555 ; -4455
+                Position = -5505 ; -4905
                 Dimension = 675 ; 675
                 Direction = Right
                 Color = 11
@@ -334,7 +340,7 @@ Coupled
             Description = Plot input signal using GnuPlot
             Graphic
                 {
-                Position = -10905 ; -1335
+                Position = -10605 ; -4260
                 Dimension = 675 ; 720
                 Direction = Right
                 Color = 15
@@ -381,7 +387,7 @@ Coupled
             Source = Cmp ;  7 ;  1 ; 0
             Sink = Cmp ;  3 ;  1 ; -1
             PointX = -12600 ; -11940 ; -11940
-            PointY = -3000 ; -3000 ; -2550
+            PointY = -3075 ; -3075 ; -2550
             }
         Line
             {
@@ -401,8 +407,8 @@ Coupled
             {
             Source = Cmp ;  3 ;  1 ; 0
             Sink = Cmp ;  15 ;  1 ; -1
-            PointX = -11025 ; -11040 ; -11040
-            PointY = -2400 ; -2400 ; -975
+            PointX = -11025 ; -11025 ; -11025 ; -10740
+            PointY = -2400 ; -2400 ; -3900 ; -3900
             }
         Line
             {
@@ -443,8 +449,8 @@ Coupled
             {
             Source = Cmp ;  4 ;  1 ; 0
             Sink = Cmp ;  1 ;  2 ; -1
-            PointX = -2325 ; -2325 ; -9990 ; -9990
-            PointY = 75 ; -300 ; -300 ; -2100
+            PointX = -2325 ; -2325 ; -10125 ; -10125 ; -9990
+            PointY = 75 ; -300 ; -300 ; -2100 ; -2100
             }
         Line
             {
@@ -485,8 +491,8 @@ Coupled
             {
             Source = Cmp ;  10 ;  1 ; 0
             Sink = Cmp ;  5 ;  1 ; -1
-            PointX = -5775 ; -5775 ; -4140
-            PointY = -4125 ; -4125 ; -4125
+            PointX = -4725 ; -4140 ; -4140
+            PointY = -4575 ; -4575 ; -4125
             }
         }
     }
