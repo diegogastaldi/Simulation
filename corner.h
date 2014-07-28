@@ -47,7 +47,7 @@ private:
 				new_list.push_front(new_time);
 			} else {
 				/*ERROR*/
-				printLog("Error: in method update_list at corner.h {a car must leave the street, but was not called the function dint} TIME: &f\n", time_simulation);
+				printLog("Error: in method update_list at corner.h (corner %f){a car must leave the street, but was not called the function dint} TIME: &f\n", corner_number, time_simulation);
 				std::exit(EXIT_FAILURE);
 			}
 			dist.pop_back();

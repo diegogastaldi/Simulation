@@ -34,7 +34,7 @@ void corner::dint(double t) {
 		} else {
 			if (a_cars < 0) {
 				/*ERROR*/;
-				printLog("Error: in method dint at corner.cpp {a car must leave, but there is not a car on the corner} TIME: %f\n", t);
+				printLog("Error: in method dint at corner.cpp (corner %f){a car must leave, but there is not a car on the corner} TIME: %f\n", corner_number, t);
  				std::exit(EXIT_FAILURE);
 			}
 		}
@@ -50,7 +50,7 @@ void corner::dext(Event x, double t) {
 	} else {
 		if (((a_cars + 1) * size_cars > size_corner)) {
     		/*Error*/;
-			printLog("Error: in method dext at corner.cpp {a car must leave, but there is not place on the corner} TIME: %f\n", t);
+			printLog("Error: in method dext at corner.cpp (corner %f) {a car must leave, but there is not place on the corner} TIME: %f\n", corner_number, t);
 			std::exit(EXIT_FAILURE);
 		} else {
             dist = update_list(dist, e, t);

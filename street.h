@@ -58,7 +58,7 @@ private:
 					crowding = true;
 				} else {
 					/*ERROR*/
-					printLog("Error: in method update at street.h {a car must leave the street, but was not called the function dint} TIME %f\n", time_simulation);
+					printLog("Error: in method update at street.h (street %f){a car must leave the street, but was not called the function dint} TIME %f\n", number_street, time_simulation);
 					std::exit(EXIT_FAILURE);
 				}
 			}

@@ -24,7 +24,7 @@ double street::ta(double t) {
 void street::dint(double t) {
 	if (amount_street < 0) {	
 		/*ERROR*/;
-		printLog("Error: in method dint at street.cpp {a car must leave, but there is not a car on the street} TIME: %f\n", t);
+		printLog("Error: in method dint at street.cpp (street %f){a car must leave, but there is not a car on the street} TIME: %f\n", number_street, t);
 		std::exit(EXIT_FAILURE);
 	} else {
         if (output) {
@@ -74,7 +74,7 @@ void street::dext(Event x, double t) {
 			} else {
                	if ((amount_street + 1) * size_cars > size_street) {
 					/*Error*/;
-					printLog("Error: in method dext at street.cpp {a car must leave, but there is not place on the street} TIME: %f\n", t);
+					printLog("Error: in method dext at street.cpp (Street %f){a car must leave, but there is not place on the street} TIME: %f\n", number_street, t);
 					std::exit(EXIT_FAILURE);
 				}   
                 else { // if !(((amount_street + 1) * size_cars) <= size_street)
