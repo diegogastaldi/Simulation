@@ -35,7 +35,7 @@ Coupled
             Parameters
                 {
                 size_cars = Val; 2 ; 
-                speed_cars = Val; 18.0556 ; 
+                speed_cars = Val; 19 ; 
                 size_corner = Val; 10 ; 
                 out_percent0 = Val; 40 ; 
                 Corner Number = Val; 1 ; Corner identifier for output reports.
