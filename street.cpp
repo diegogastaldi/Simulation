@@ -53,12 +53,11 @@ void street::dext(Event x, double t) {
 		if (amount_street == 0) {
 			output = (value[0] == 2);
 		} else {
+			distance = update(distance, e, output, t);
 			if (value[0] == 2)  {
-				distance = update(distance, e, output, t);
 				output = true;
 				Sigma = distance.back() / speed_cars;
 			} else { //	if (value[0] != 2) 
-				distance = update(distance, e, output, t);
 				output = false;
 				Sigma = std::numeric_limits<double>::max();
 			}
@@ -67,7 +66,6 @@ void street::dext(Event x, double t) {
 		if (x.port == 1) {
 			if (amount_street == 0) {
 				amount_street = 1;
-				distance.clear();
 				distance.push_front(size_street);
 				if (output)
 					Sigma = (size_street/speed_cars);
@@ -79,13 +77,12 @@ void street::dext(Event x, double t) {
 				}   
                 else { // if !(((amount_street + 1) * size_cars) <= size_street)
                     distance = update(distance, e, output, t);
+				    Sigma = Sigma - e;
                     if ((amount_street >= 1) && ((size_street - distance.front()) >= size_cars)) {
 					    amount_street++;
 					    distance.push_front(size_street);
-					    Sigma = Sigma - e;
 				    } else { //(size_street - distance.front() < size_cars)
 						if (amount_street >= 1) {
-							Sigma = Sigma - e;
 							printLog("Warning: Street %f {a car was ignored because there is not place}TIME: %f\n", number_street, t);
 						}
 					}

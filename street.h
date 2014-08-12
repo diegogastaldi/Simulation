@@ -96,7 +96,7 @@ private:
 		}
 
 	}
-
+    // concatenates lists
 	std::list <double> push_all_front(std::list <double> list_up, std::list <double> list_res) {
         while (!list_up.empty()) {
             list_res.push_front(list_up.back());

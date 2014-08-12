@@ -27,12 +27,12 @@ void corner::dint(double t) {
 		dist = update_list(dist, sigma, t);
 		sigma = dist.back()/speed_cars;
 	} else {
-		if ((a_cars == 1) || (a_cars == 0)) {
+		if (a_cars == 1) {
 			a_cars = 0;
 			dist.clear(); 
 			sigma = std::numeric_limits<double>::max();
 		} else {
-			if (a_cars < 0) {
+			if (a_cars <= 0) {
 				/*ERROR*/;
 				printLog("Error: in method dint at corner.cpp (corner %f){a car must leave, but there is not a car on the corner} TIME: %f\n", corner_number, t);
  				std::exit(EXIT_FAILURE);
@@ -50,17 +50,17 @@ void corner::dext(Event x, double t) {
 	} else {
 		if (((a_cars + 1) * size_cars > size_corner)) {
     		/*Error*/;
-			printLog("Error: in method dext at corner.cpp (corner %f) {a car must leave, but there is not place on the corner} TIME: %f\n", corner_number, t);
+    		double port = x.port;
+			printLog("Error: in method dext at corner.cpp (corner %f) {a car (from port %f) must leave, but there is not place on the corner(%f)} TIME: %f\n", corner_number, port, a_cars, t);
 			std::exit(EXIT_FAILURE);
 		} else {
             dist = update_list(dist, e, t);
+            sigma = sigma - e;
             if ((a_cars >= 1) && ((size_corner - dist.front()) >= size_cars)) {
 	         	a_cars++;
                	dist.push_front(size_corner);
-               	sigma = sigma - e;
             } else {
                 if ((a_cars >= 1) && (size_corner - dist.front() < size_cars)) {
-				    sigma = sigma - e;
         			printLog("Warning: Corner %f {a car was ignored because there is not place} TIME: %f\n", corner_number, t);
 			    }
 			}
