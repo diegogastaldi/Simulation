@@ -22,7 +22,7 @@ double street::ta(double t) {
 }
 
 void street::dint(double t) {
-	if (amount_street < 0) {	
+	if (amount_street <= 0) {	
 		/*ERROR*/;
 		printLog("Error: in method dint at street.cpp (street %f){a car must leave, but there is not a car on the street} TIME: %f\n", number_street, t);
 		std::exit(EXIT_FAILURE);
@@ -33,10 +33,21 @@ void street::dint(double t) {
        		   distance.pop_back();
                distance = update(distance, Sigma, output, t);
         	   Sigma = distance.back()/speed_cars;
-            } else { //	if ((amount_street == 0) || (amount_street == 1)) 
+        	   
+        	   // calculate total time in street
+        	   double current_arrival = arrival_time.back();
+        	   arrival_time.pop_back();
+        	   total_time.push_front(t - current_arrival);
+            } else { //	if (amount_street == 1) 
              	amount_street = 0;
 			    distance.clear(); 
 			    Sigma = std::numeric_limits<double>::max();
+			    
+           	   // calculate total time in street
+        	   double current_arrival = arrival_time.back();
+        	   arrival_time.pop_back();
+        	   total_time.push_front(t - current_arrival);
+
             } 
 		} else {	//if (!output) 
             distance = update(distance, Sigma, output, t);
@@ -81,6 +92,9 @@ void street::dext(Event x, double t) {
                     if ((amount_street >= 1) && ((size_street - distance.front()) >= size_cars)) {
 					    amount_street++;
 					    distance.push_front(size_street);
+					    
+				        // add new arrival time in list
+                 	    arrival_time.push_front(t);
 				    } else { //(size_street - distance.front() < size_cars)
 						if (amount_street >= 1) {
 							printLog("Warning: Street %f {a car was ignored because there is not place}TIME: %f\n", number_street, t);
@@ -97,4 +111,11 @@ Event street::lambda(double t) {
 }
 void street::exit() {
      printLog("exit: on the street %f there is %f cars.\n", number_street, amount_street);
+     double sum = 0;
+     for(std::list<double>::iterator list_iter = total_time.begin(); list_iter != total_time.end(); list_iter++)
+     {
+         sum = sum + *list_iter;
+     }
+     double average_time = sum / total_time.size();
+     printLog("exit: on the street %f the average time is %f.\n", number_street, average_time);
 }

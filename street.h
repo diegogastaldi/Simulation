@@ -19,6 +19,8 @@ double number_street;
 
 double amount_street;
 std::list <double> distance;
+std::list <double> arrival_time;
+std::list <double> total_time;
 double Sigma;
 bool output;
 
