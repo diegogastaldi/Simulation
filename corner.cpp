@@ -40,13 +40,13 @@ void corner::dint(double t) {
 	}
 }
 void corner::dext(Event x, double t) {
-	if (((a_cars + 1) * size_cars > size_corner)) {
+	if (((a_cars + 1) * size_cars > size_corner) && ((a_cars == 0))) {
    		/*Error*/;
    		double port = x.port;
-		printLog("Error: in method dext at corner.cpp (corner %f) {a car (from port %f) must leave, but there is not place on the corner(%f)} TIME: %f\n", corner_number, port, a_cars, t);
+		printLog("ERROR: in method dext at corner.cpp (corner %f) {a car (from port %f) must leave, but there is not place on the corner(%f)} TIME: %f\n", corner_number, port, a_cars, t);
 		std::exit(EXIT_FAILURE);
 	} else {
-    	if (a_cars == 0) {
+    	if (a_cars == 0)  {
 	    	a_cars = 1;
 		    dist.push_front(size_corner);
       		sigma = (size_corner/speed_cars);

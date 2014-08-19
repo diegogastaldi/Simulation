@@ -51,8 +51,11 @@ private:
         
 		while (!dist.empty()) {
 			new_time = dist.back() - (time * speed_cars);
-
-			if (new_time >= 0) {
+            //rounding problem solving
+			if (new_time >= -0.000001) {
+                if (new_time < 0) {
+                   new_time = 0;
+                }
 				new_list.push_front(new_time);
 			} else {
 				if (!output) {

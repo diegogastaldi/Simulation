@@ -36,7 +36,7 @@ void street::dint(double t) {
         	   
             } else { //	if (amount_street == 1) 
              	amount_street = 0;
-			    distance.clear(); 
+			    distance.pop_back(); 
 			    Sigma = std::numeric_limits<double>::max();
             } 
        	   // calculate total time in street
