@@ -172,9 +172,9 @@ Coupled
                 }
             Parameters
                 {
-                time_red = Val; 20 ; Time in which the semaphore remain red.
-                time_green = Val; 17 ; time in which the semaphore remain green.
-                time_yellow = Val; 3 ; time in which the semaphore remain yellow.
+                time_red = Val; 10 ; Time in which the semaphore remain red.
+                time_green = Val; 9 ; time in which the semaphore remain green.
+                time_yellow = Val; 1 ; time in which the semaphore remain yellow.
                 initial_color = Val; 0 ; two ->green)
                 }
             }
@@ -194,9 +194,9 @@ Coupled
                 }
             Parameters
                 {
-                time_red = Val; 20 ; Time in which the semaphore remain red.
-                time_green = Val; 17 ; time in which the semaphore remain green.
-                time_yellow = Val; 3 ; time in which the semaphore remain yellow.
+                time_red = Val; 10 ; Time in which the semaphore remain red.
+                time_green = Val; 9 ; time in which the semaphore remain green.
+                time_yellow = Val; 1 ; time in which the semaphore remain yellow.
                 initial_color = Val; 2 ; two ->green)
                 }
             }
@@ -216,9 +216,9 @@ Coupled
                 }
             Parameters
                 {
-                time_red = Val; 20 ; Time in which the semaphore remain red.
-                time_green = Val; 17 ; time in which the semaphore remain green.
-                time_yellow = Val; 3 ; time in which the semaphore remain yellow.
+                time_red = Val; 10 ; Time in which the semaphore remain red.
+                time_green = Val; 9 ; time in which the semaphore remain green.
+                time_yellow = Val; 1 ; time in which the semaphore remain yellow.
                 initial_color = Val; 0 ; two ->green)
                 }
             }
@@ -238,9 +238,9 @@ Coupled
                 }
             Parameters
                 {
-                time_red = Val; 20 ; Time in which the semaphore remain red.
-                time_green = Val; 17 ; time in which the semaphore remain green.
-                time_yellow = Val; 3 ; time in which the semaphore remain yellow.
+                time_red = Val; 10 ; Time in which the semaphore remain red.
+                time_green = Val; 9 ; time in which the semaphore remain green.
+                time_yellow = Val; 1 ; time in which the semaphore remain yellow.
                 initial_color = Val; 2 ; two ->green)
                 }
             }
