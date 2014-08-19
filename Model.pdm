@@ -58,7 +58,7 @@ Coupled
             Parameters
                 {
                 size_cars = Val; 2 ; 
-                speed_cars = Val; 10 ; 
+                speed_cars = Val; 8 ; 
                 size_corner = Val; 10 ; 
                 out_percent0 = Val; 50 ; 
                 Corner Number = Val; 2 ; Corner identifier for output reports.
@@ -150,7 +150,7 @@ Coupled
             Parameters
                 {
                 size_cars = Val; 2 ; size of the cars
-                speed_cars = Val; 8.333 ; speed of the cars
+                speed_cars = Val; 20 ; speed of the cars
                 size_street = Val; 80 ; size of the corner
                 initial_output = Val; 0 ; false = 0)
                 Street Number = Val; 2 ; Street identifier for output reports.

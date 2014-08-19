@@ -19,7 +19,6 @@ void corner::init(double t,...) {
 double corner::ta(double t) {
 	return sigma;
 }
-
 void corner::dint(double t) {
 	if (a_cars >= 2) {
 		a_cars--;
@@ -28,8 +27,8 @@ void corner::dint(double t) {
 		sigma = dist.back()/speed_cars;
 	} else {
 		if (a_cars == 1) {
-			a_cars = 0;
-			dist.clear(); 
+			a_cars--;
+			dist.pop_back();
 			sigma = std::numeric_limits<double>::max();
 		} else {
 			if (a_cars <= 0) {
@@ -40,20 +39,18 @@ void corner::dint(double t) {
 		}
 	}
 }
-
 void corner::dext(Event x, double t) {
-	if (a_cars == 0) {
-		a_cars = 1;
-		dist.clear();
-		dist.push_front(size_corner);
-		sigma = (size_corner/speed_cars);
+	if (((a_cars + 1) * size_cars > size_corner)) {
+   		/*Error*/;
+   		double port = x.port;
+		printLog("Error: in method dext at corner.cpp (corner %f) {a car (from port %f) must leave, but there is not place on the corner(%f)} TIME: %f\n", corner_number, port, a_cars, t);
+		std::exit(EXIT_FAILURE);
 	} else {
-		if (((a_cars + 1) * size_cars > size_corner)) {
-    		/*Error*/;
-    		double port = x.port;
-			printLog("Error: in method dext at corner.cpp (corner %f) {a car (from port %f) must leave, but there is not place on the corner(%f)} TIME: %f\n", corner_number, port, a_cars, t);
-			std::exit(EXIT_FAILURE);
-		} else {
+    	if (a_cars == 0) {
+	    	a_cars = 1;
+		    dist.push_front(size_corner);
+      		sigma = (size_corner/speed_cars);
+        } else {
             dist = update_list(dist, e, t);
             sigma = sigma - e;
             if ((a_cars >= 1) && ((size_corner - dist.front()) >= size_cars)) {
@@ -67,7 +64,6 @@ void corner::dext(Event x, double t) {
 		}
 	}
 }
-
 Event corner::lambda(double t) {
 	double num_rand = rand() % 101;
 	

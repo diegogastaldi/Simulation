@@ -34,21 +34,16 @@ void street::dint(double t) {
                distance = update(distance, Sigma, output, t);
         	   Sigma = distance.back()/speed_cars;
         	   
-        	   // calculate total time in street
-        	   double current_arrival = arrival_time.back();
-        	   arrival_time.pop_back();
-        	   total_time.push_front(t - current_arrival);
             } else { //	if (amount_street == 1) 
              	amount_street = 0;
 			    distance.clear(); 
 			    Sigma = std::numeric_limits<double>::max();
-			    
-           	   // calculate total time in street
-        	   double current_arrival = arrival_time.back();
-        	   arrival_time.pop_back();
-        	   total_time.push_front(t - current_arrival);
-
             } 
+       	   // calculate total time in street
+       	   double current_arrival = arrival_time.back();
+       	   arrival_time.pop_back();
+       	   total_time.push_front(t - current_arrival);
+
 		} else {	//if (!output) 
             distance = update(distance, Sigma, output, t);
 			Sigma = std::numeric_limits<double>::max();
@@ -78,6 +73,9 @@ void street::dext(Event x, double t) {
 			if (amount_street == 0) {
 				amount_street = 1;
 				distance.push_front(size_street);
+		        // add new arrival time in list
+           	    arrival_time.push_front(t);
+
 				if (output)
 					Sigma = (size_street/speed_cars);
 			} else {

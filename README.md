@@ -13,7 +13,7 @@ Note:
 
 
 como la calle 3 va mas rapido que la dos, y la esquina mas aun, cuando entre un auto a la calle dos tardara mas en avanzar 
-dos metros que en la esquina -> dos opciones, disminuir la vel en calle 3 o aumentar en calle 2
+dos metros que en la esquina -> dos opciones, disminuir la vel en calle 3 o ------aumentar en calle 2
 
 
 
